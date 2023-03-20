@@ -1,0 +1,97 @@
+<form class="border" [formGroup]="Salaryform">
+<h5 class="modal-title fs-5 pl-2" id="exampleModalLabel">Salary Information:</h5>
+
+<div class="row m-2">
+
+<div class="col m-3 ">
+    <div class="form-outline">
+      <label class="form-label" for="typeNumber">Basic Salary</label>
+      <input type="number" id="typeNumber" class="form-control" name="BasicSalary" formControlName="BasicSalary" step="0.01" max="9999999999.99."/>
+
+      <span style="color: red;" *ngIf="BasicSalary && BasicSalary.errors && (BasicSalary.touched || BasicSalary.dirty)">
+        <span *ngIf="BasicSalary.errors['required']">Salary information is required.</span>
+        <span *ngIf="BasicSalary.errors['pattern']">Salary must be in the form of between (10,2) digits.</span>
+        <!-- <span *ngIf="BasicSalary.errors['max']">Salary exceeds maximum value of 9999,999,999.99.</span> -->
+      </span>
+      
+    </div>
+  </div>
+
+  <div class="col m-3 ">
+    <div class="form-outline">
+      <label class="form-label" for="typeNumber2">House rent Allowance</label>
+      <input type="number" id="typeNumber2" class="form-control" name="HouseRentAllowance" formControlName="HouseRentAllowance" step="0.01" max="9999999999.99."/>
+      <span style="color: red;" *ngIf="HouseRentAllowance && HouseRentAllowance.errors && (HouseRentAllowance.touched || HouseRentAllowance.dirty)">
+        <!-- <span *ngIf="HouseRentAllowance.errors['required']">HRA information is required.</span> -->
+        <span *ngIf="HouseRentAllowance.errors['pattern']">HRA must be in the form of between (10,2) digits.</span>
+        <!-- <span *ngIf="HouseRentAllowance.errors['max']">HRA exceeds maximum value of 9999,999,999.99.</span> -->
+      </span>
+    </div>
+  </div>
+
+  <div class="col m-3 ">
+    <div class="form-outline">
+      <label class="form-label" for="typeNumber3">Dearness Allowance</label>
+      <input type="number" id="typeNumber3" class="form-control" name="DearnessAllowance" formControlName="DearnessAllowance" step="0.01" max="9999999999.99."/>
+      <span style="color: red;" *ngIf="DearnessAllowance && DearnessAllowance.errors && (DearnessAllowance.touched || DearnessAllowance.dirty)">
+        <!-- <span *ngIf="DearnessAllowance.errors['required']">DA information is required.</span> -->
+        <span *ngIf="DearnessAllowance.errors['pattern']">DA must be in the form of between (10,2) digits.</span>
+        <!-- <span *ngIf="DearnessAllowance.errors['max']">DA exceeds maximum value of 9999,999,999.99.</span> -->
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row m-2">
+
+    <div class="col m-3 ">
+        <div class="form-outline">
+          <label class="form-label" for="typeNumber4">Travelling Allowance</label>
+          <input type="number" id="typeNumber4" class="form-control" name="TravellingAllowance" formControlName="TravellingAllowance" step="0.01" max="9999999999.99."/>
+          <span style="color: red;" *ngIf="TravellingAllowance && TravellingAllowance.errors && (TravellingAllowance.touched || TravellingAllowance.dirty)">
+            <!-- <span *ngIf="TravellingAllowance.errors['required']">Travelling Allowance information is required.</span> -->
+            <span *ngIf="TravellingAllowance.errors['pattern']">Travelling Allowancemust be in the form of between (10,2) digits.</span>
+            <!-- <span *ngIf="TravellingAllowance.errors['max']">Travelling Allowance exceeds maximum value of 9999,999,999.99.</span> -->
+          </span>
+        </div>
+      </div>
+
+      <div class="col m-3 ">
+        <div class="form-outline">
+          <label class="form-label" for="typeNumber5">Other Allowance</label>
+          <input type="number" id="typeNumber5" class="form-control" name="OtherAllowance" formControlName="OtherAllowance" step="0.01" max="9999999999.99."/>
+          <span style="color: red;" *ngIf="OtherAllowance && OtherAllowance.errors && (OtherAllowance.touched || OtherAllowance.dirty)">
+            <!-- <span *ngIf="OtherAllowance.errors['required']">OtherAllowance information is required.</span> -->
+            <span *ngIf="OtherAllowance.errors['pattern']">OtherAllowance must be in the form of between (10,2) digits.</span>
+            <!-- <span *ngIf="OtherAllowance.errors['max']">OtherAllowance exceeds maximum value of 9999,999,999.99.</span> -->
+          </span>
+        </div>
+      </div>
+
+      <div class="col m-3 ">
+        <div class="form-outline">
+          <label class="form-label" for="typeNumber6">Deduction</label>
+          <input type="number" id="typeNumber6" class="form-control" name="Deduction" formControlName="Deduction" step="0.01" max="9999999999.99."/>
+          <span style="color: red;" *ngIf="Deduction && Deduction.errors && (Deduction.touched || Deduction.dirty)">
+            <!-- <span *ngIf="Deduction.errors['required']">Deduction information is required.</span> -->
+            <span *ngIf="Deduction.errors['pattern']">Deduction must be in the form of between (10,2) digits.</span>
+            <!-- <span *ngIf="Deduction.errors['max']">Deduction exceeds maximum value of 9999,999,999.99.</span> -->
+          </span>
+        </div>
+      </div>
+
+      <div class="col m-3 ">
+        <div class="form-outline">
+          <label class="form-label" for="typeNumber7">Net Salary</label>
+          <input type="number" id="typeNumber7" class="form-control" name="NetSalary" formControlName="NetSalary" step="0.01" max="9999999999.99."/>
+        
+          <span style="color: red;" *ngIf="NetSalary && NetSalary.errors && (NetSalary.touched || NetSalary.dirty)">
+            <span *ngIf="NetSalary.errors['required']">Net Salary Information is required.</span>
+            <span *ngIf="NetSalary.errors['pattern']">Net Salary number form of between (10,2) digits.</span>
+           <!-- <span *ngIf="NetSalary.errors['max']">Net Salary exceeds maximum value of 9999,999,999.99.</span> -->
+          </span> 
+        </div>
+      </div>
+
+</div>
+</form>

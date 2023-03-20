@@ -1,0 +1,25 @@
+<form class="">
+
+<h5 class="modal-title fs-5 pl-2" id="exampleModalLabel">Employee Documents:</h5>
+
+<div class="row mt-3">
+
+    <div class="col m-lg-3 w-25">
+        <label class="form-label" for="document">Document Name:</label>
+        <select  id="document" class="form-select" formControlName="document">
+        <option value="default" selected>Documents</option> 
+
+        <option *ngFor="let option of Documents; let i=index;
+       "value="{{i}}">{{option | titlecase}}</option>">
+        </select>
+    </div>
+
+<div class="col m-lg-3">
+      <label for="Document" class="form-label">Document Image</label>
+      <input type="file" class="form-control" id="Document" #fileInput>
+    </div>
+</div>
+
+<button type="button" class="btn btn-info m-lg-3">Add</button>
+
+</form>

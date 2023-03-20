@@ -1,0 +1,236 @@
+<div class="container-fluid g-0"></div>
+
+<form class="border" [formGroup]="Iform" (ngSubmit)="submitForm()">
+    <h5 class="modal-title fs-5 pl-2" id="exampleModalLabel">Basic Information</h5>
+    <div class="row mt-3">
+      <div class="col">
+        <label for="profile" class="form-label">Profile Image</label>
+        <input type="file" class="form-control" id="profile" #fileInput>
+      </div>
+
+      <div class="col">
+
+        <label class="form-label" for="type-text">First Name:</label>
+      <input type="text"  id="type-text" class="form-control" placeholder="First name" name="Firstname" formControlName="Firstname"/>
+      <!-- <span style="color: red;" *ngIf="Firstname && Firstname.invalid && Firstname.touched">Name is required</span> -->
+
+      <span style="color: red;" *ngIf="Firstname && Firstname.errors && (Firstname.touched || Firstname.dirty)">
+        <span *ngIf="Firstname.errors['required']">Name is required.</span>
+        <span *ngIf="Firstname.errors['pattern']">Name must contain only letters.</span>
+      </span>
+      
+      </div>
+      
+      <div class="col">
+        <label class="form-label" for="type-text2">Last Name:</label>
+      <input type="text"  id="type-text2" class="form-control" placeholder="Last name" name="Lastname" formControlName="Lastname"/>
+      <!-- <span style="color: red;" *ngIf="Lastname && Lastname.invalid && Lastname.touched">Surname is required</span> -->
+
+      <span style="color: red;" *ngIf="Lastname && Lastname.errors && (Lastname.touched || Lastname.dirty)">
+        <span *ngIf="Lastname.errors['required']">Name is required.</span>
+        <span *ngIf="Lastname.errors['pattern']">Name must contain only letters.</span>
+      </span>
+
+      </div>
+      
+      <div class="col">
+        <label for="datepicker" class="form-label">Date Of Birth:</label>
+        <input type="date" class="form-control" id="datepicker" name="birthday" formControlName="birthday" />
+        <span *ngIf="Iform.get('birthday')?.invalid && Iform.get('birthday')?.touched">
+          <span style="color: red" *ngIf="Iform.get('birthday')?.errors?.['required']">Date of birth is required.</span>
+        </span>
+      </div>
+     
+    </div>
+
+
+    <div class="row">
+
+      <div class="col">
+        <div class="row">
+          <h6 class="text-secondary m-0">Gender :</h6>
+        </div>
+
+        <div class="row">
+          <div class="col2">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="m" formControlName="gender" checked/>
+              <label class="form-check-label" for="male">Male</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="female" value="f" formControlName="gender"/>
+              <label class="form-check-label" for="female">Female</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+
+      <div class="col">
+    <div class="form-group" >
+      <label class="form-label" for="exampleInputEmail1">Personal Email:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email" name="PersonalEmail" formControlName="PersonalEmail"/>
+        <!-- <span style="color: red;" *ngIf="PersonalEmail && PersonalEmail.invalid && PersonalEmail.touched">Write in proper Email Format</span> -->
+        
+        <span style="color: red;" *ngIf="PersonalEmail && PersonalEmail.errors && (PersonalEmail.touched || PersonalEmail.dirty)">
+          <span *ngIf="PersonalEmail.errors['required']">Email is required.</span>
+          <span *ngIf="PersonalEmail.errors['email']">Invalid email format.</span>
+        </span>
+
+    </div>
+  </div>
+  
+    <div class="col">
+    <div class="form-outline">
+      <label class="form-label" for="typeNumber">Phone Number:</label>
+      <input type="number" id="typeNumber" class="form-control" name="PhoneNumber" formControlName="PhoneNumber" pattern="[0-9]{10}"/>
+      <!-- <span style="color: red;" *ngIf="PhoneNumber && PhoneNumber.invalid && PhoneNumber.touched">Number Must Be 10 Digits.</span> -->
+      <span style="color: red;" *ngIf="PhoneNumber && PhoneNumber.errors && (PhoneNumber.touched || PhoneNumber.dirty)">
+        <span *ngIf="PhoneNumber.errors['required']">Phone number is required.</span>
+        <span *ngIf="PhoneNumber.errors['pattern']">Phone number must be 10 digits.</span>
+      </span>
+      
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="form-outline">
+      <label class="form-label" for="typeNumber2">EmergencyConatactNo:</label>
+      <input type="number" id="typeNumber2" class="form-control" name="EmergencyConatactNo" formControlName="EmergencyConatactNo" pattern="[0-9]{10}"/>
+      <!-- <span style="color: red;" *ngIf="EmergencyConatactNo && EmergencyConatactNo.invalid && EmergencyConatactNo.touched">Number Must Be 10 Digits.</span> -->
+      <span style="color: red;" *ngIf="EmergencyConatactNo && EmergencyConatactNo.errors && (EmergencyConatactNo.touched || EmergencyConatactNo.dirty)">
+        <span *ngIf="EmergencyConatactNo.errors['required']">Phone number is required.</span>
+        <span *ngIf="EmergencyConatactNo.errors['pattern']">Phone number must be 10 digits.</span>
+      </span>
+      
+    </div>
+  </div>
+
+  </div>
+
+  <h5 class="modal-title fs-5 pl-2" id="exampleModalLabel">Employee Information</h5>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-group" >
+        <label class="form-label" for="exampleInputEmail2">Official Email:</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
+          placeholder="Enter email" name="OfficialEmail" formControlName="OfficialEmail"/>
+          <!-- <span style="color: red;" *ngIf="OfficialEmail && OfficialEmail.invalid && OfficialEmail.touched">Write in proper Email Format</span> -->
+
+          <span style="color: red;" *ngIf="OfficialEmail && OfficialEmail.errors && (OfficialEmail.touched || OfficialEmail.dirty)">
+            <span *ngIf="OfficialEmail.errors['required']">Email is required.</span>
+            <span *ngIf="OfficialEmail.errors['email']">Invalid email format.</span>
+          </span>
+
+      </div>
+    </div>
+
+    <div class="col">
+      <label class="form-label" for="designation">Designation:</label>
+      <select  id="designation" class="form-select" formControlName="designation">
+       <option value="default" selected>Designation</option> 
+
+        <option *ngFor="let option of Designation; let i=index;
+         "value="{{i}}">{{option | titlecase}}</option>">
+
+      </select>
+    </div>
+
+    <div class="col">
+      <label class="form-label" for="department">Department:</label>
+      <select  id="department" class="form-select" formControlName="department">
+       <option value="default" selected>Department</option> 
+
+        <option *ngFor="let option of Department; let i=index;
+         "value="{{i}}">{{option | titlecase}}</option>">
+
+      </select>
+    </div>
+    <div class="col">
+
+      <label class="form-label" for="type-text3">Reporting Manager:</label>
+    <input type="text"  id="type-text3" class="form-control" placeholder="Reporting Manager" name="ReportingManager" formControlName="ReportingManager"/>
+    <!-- <span style="color: red;" *ngIf="ReportingManager && ReportingManager.invalid && ReportingManager.touched">The Field is Not valid</span> -->
+
+    <span style="color: red;" *ngIf="ReportingManager && ReportingManager.errors && (ReportingManager.touched || ReportingManager.dirty)">
+      <span *ngIf="ReportingManager.errors['required']">Name is required.</span>
+      <span *ngIf="ReportingManager.errors['pattern']">Name must contain only letters.</span>
+    </span>
+
+    </div>
+
+    <div class="col">
+      <label for="datepicker1" class="form-label">Date Of Joining:</label>
+      <input type="date" class="form-control" id="datepicker1" formControlName="DateOfJoining" required/>
+      <span *ngIf="Iform.get('DateOfJoining')?.invalid && Iform.get('DateOfJoining')?.touched">
+        <span style="color: red" *ngIf="Iform.get('DateOfJoining')?.errors?.['required']">Joining Date is required.</span>
+      </span>
+    </div>
+
+    
+   </div>
+
+   <div class="row">
+    <div class="col">
+      <label class="form-label" for="Work">Location:</label>
+    <input type="text" id="Work" class="form-control" placeholder="Work Location" aria-label="Work Location" name="WorkLocation" formControlName="WorkLocation"/>
+    <!-- <span style="color: red;" *ngIf="WorkLocation && WorkLocation.invalid && WorkLocation.touched">Location is required</span> -->
+
+    <span style="color: red;" *ngIf="WorkLocation && WorkLocation.errors && (WorkLocation.touched || WorkLocation.dirty)">
+      <span *ngIf="WorkLocation.errors['required']">Name is required.</span>
+      <span *ngIf="WorkLocation.errors['pattern']">Name must contain only letters.</span>
+    </span>
+
+    </div>
+
+
+   
+
+    <div class="col">
+
+      <label class="form-label" for="type-text4"> State:</label>
+    <input type="text"  id="type-text4" class="form-control" placeholder="Working State" name="State" formControlName="State"/>
+    <!-- <span style="color: red;" *ngIf="State && State.invalid && State.touched">State is required</span> -->
+
+    <span style="color: red;" *ngIf="State && State.errors && (State.touched || State.dirty)">
+      <span *ngIf="State.errors['required']">Name is required.</span>
+      <span *ngIf="State.errors['pattern']">Name must contain only letters.</span>
+    </span>
+
+    </div>
+
+    <div class="col">
+
+      <label class="form-label" for="type-text5">Country:</label>
+    <input type="text"  id="type-text5" class="form-control" placeholder="Working Country" name="Country" formControlName="Country"/>
+    <!-- <span style="color: red;" *ngIf="Country && Country.invalid && Country.touched">Country is required</span> -->
+
+    <span style="color: red;" *ngIf="Country && Country.errors && (Country.touched || Country.dirty)">
+      <span *ngIf="Country.errors['required']">Name is required.</span>
+      <span *ngIf="Country.errors['pattern']">Name must contain only letters.</span>
+    </span>
+
+    </div>
+
+    <div class="col">
+      <div class="input-group">
+          <div class="input-group-text mt-4">
+            <label class="form-label1 m-1" for="checkbox">Active</label>
+            <input type="checkbox" id="checkbox" aria-label="Checkbox for following text input" checked/>
+          </div>  
+        </div>    
+      </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Next Page</button>
+  
+  </form>
+
+
+
+  
