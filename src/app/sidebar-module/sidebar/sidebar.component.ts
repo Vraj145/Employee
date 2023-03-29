@@ -16,10 +16,7 @@ export class SidebarComponent implements OnInit {
     // throw new Error('Method not implemented.');
   }
 
-  Profile = [
-    'Logout',
-    'Any',
-  ];
+
 
   navigateToAbout() {
     this.router.navigate(['/user/about']);
