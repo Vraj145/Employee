@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user-module/user.module').then(x => x.UserModule)
   },
+  {
+    path: 'sidebar',
+   loadChildren: () => import('./sidebar-module/sidebar.module').then(x => x.SidebarModule)
+  }
+
 
 ];
 

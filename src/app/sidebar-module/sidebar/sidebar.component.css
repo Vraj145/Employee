@@ -1,0 +1,23 @@
+/* Style the dropdown button */
+.dropdown-toggle {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+  }
+  
+  /* Style the dropdown menu */
+  .dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+  }
+  
+  /* Style the dropdown menu items */
+  .dropdown-item {
+    color: #333333;
+  }
+  
+  /* Style the dropdown menu items on hover */
+  .dropdown-item:hover {
+    background-color: #f2f2f2;
+  }
+  
