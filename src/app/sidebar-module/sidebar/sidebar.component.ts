@@ -16,10 +16,9 @@ export class SidebarComponent implements OnInit {
     // throw new Error('Method not implemented.');
   }
 
+  title = 'HeaderSideNav';
+  sideNavStatus: boolean = false;
 
 
-  navigateToAbout() {
-    this.router.navigate(['/user/about']);
-  }
   
 }

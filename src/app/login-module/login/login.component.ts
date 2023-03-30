@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit{
     if(this.Loginform.valid){
       console.log(this.Loginform.value)
 
-      this.router.navigate(['sidebar']);
+      this.router.navigate(['user/about']);
     }
 }
 }

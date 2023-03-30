@@ -1,64 +1,47 @@
-/* Style the dropdown button */
-/* .dropdown-toggle {
-    background-color: #ffffff;
-    color: #333333;
-    border: 1px solid #cccccc;
-  } */
-  
-  /* Style the dropdown menu */
-  /* .dropdown-menu {
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-  }
-   */
-  /* Style the dropdown menu items */
-  /* .dropdown-item {
-    color: #333333;
-  } */
-  
-  /* Style the dropdown menu items on hover */
-  /* .dropdown-item:hover {
-    background-color: #f2f2f2;
-  } */
-  
-  /* New :- */
-
-  body {
-    background-color: #fbfbfb;
-    }
-    @media (min-width: 991.98px) {
-    main {
-    padding-left: 240px;
-    }
-    }
-    
-    /* Sidebar */
-    .sidebar {
+.black-border{
+    border: 1px solid black;
+}
+empmng-sidebarheader{
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    padding: 58px 0 0; /* Height of navbar */
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    width: 240px;
-    z-index: 600;
-    }
-    
-    @media (max-width: 991.98px) {
-    .sidebar {
     width: 100%;
-    }
-    }
-    .sidebar .active {
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-    }
-    
-    .sidebar-sticky {
-    position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: 0.5rem;
+    top: 0px;
+    height: 4rem;
+    z-index: 2;
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+}
+
+empmng-display {
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh - 4rem); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(34, 34, 34, 1);
+    border-top: 1px solid white;
     overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    }
+    white-space: nowrap;
+    transition: width 250ms ease-in;
+}
+
+.empmng-display-open{ 
+    width: 250px;
+
+}
+
+.display-area{
+    position: absolute;
+    left: 60px;
+    width: calc(100% - 60px);
+    transition: left 250ms ease-in, width 250ms ease-in;
+    
+}
+.display-area-shrink {
+    width: calc(100% - 250px);
+    left: 250px;
+}
