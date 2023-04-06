@@ -11,47 +11,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserBaseComponent } from './user-base.component';
 
 const userRoutes: Routes = [
-  {
-    path: '',
-    component: UserBaseComponent,
-    children: [
-      {
-        path: 'about',
-        component: AboutComponent
-      },
-      {
-        path: 'header',
-        component: HeaderComponent
-      },
-      {
-        path: 'document',
-        component: DocumentComponent
-      },
-      {
-        path: 'salary',
-        component: SalaryComponent
-      },
-      {
-        path: 'secondpage',
-        component: SecondpageComponent
-      },
-      {
-        path: 'thirdpage',
-        component: ThirdpageComponent
-      }
-    ]
-  }
+
 ];
 
 @NgModule({
   declarations: [
-    UserBaseComponent,
-    HeaderComponent,
-    AboutComponent,
-    DocumentComponent,
-    SalaryComponent,
-    SecondpageComponent,
-    ThirdpageComponent
+   
   ],
   imports: [
     CommonModule,

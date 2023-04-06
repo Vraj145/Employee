@@ -5,7 +5,14 @@
     <empmng-display [sideNavStatus]="sideNavStatus" [ngClass]="{'empmng-display-open': sideNavStatus}"></empmng-display>
 
     <div class="display-area p-3" [ngClass]="{'display-area-shrink': sideNavStatus}">
-      <p class="fs-1 fw-bold fst-italic">Main Display Area</p>
+      <app-user-base></app-user-base>
+    
+
+      <!-- <p class="fs-1 fw-bold fst-italic">Main Display Area</p> -->
     </div>
+
+    
   </main>
+
+  
 </div> 

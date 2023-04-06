@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'empmng-display',
@@ -19,6 +20,7 @@ export class DisplayComponent implements OnInit {
       number: '2',
       name: 'Employee',
       icon: 'fa-solid fa-users'
+      
     },
     {
       number: '3',
@@ -37,8 +39,13 @@ export class DisplayComponent implements OnInit {
     }
   
   ];
+  
 
-  constructor(){ }
+  navigateToEmployee(){
+    this.router.navigate(['sidebar/about']);
+  }
+
+  constructor(private router: Router){ }
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');

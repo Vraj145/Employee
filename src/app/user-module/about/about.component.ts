@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -119,7 +119,7 @@ export class AboutComponent implements OnInit{
     console.log(this.Iform.value);
       // Submit form
       // ...
-      this.router.navigate(['user/secondpage']);
+      this.router.navigate(['sidebar/secondpage']);
     }
   }
   

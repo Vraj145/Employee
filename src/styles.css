@@ -1,9 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body{
   
-    /* background-color: hsl(226, 67%, 92%); */
-    /* background-color: rgb(190, 214, 238); */
-    
-    background: linear-gradient(to right, #f5f1f1, #ead8d7, #e9ccc2, hsl(54, 53%, 85%));
+    background-color: white;
     
 }

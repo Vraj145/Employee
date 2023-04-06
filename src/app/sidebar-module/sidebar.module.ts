@@ -4,12 +4,21 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DisplayComponent } from './display/display.component';
 import { SidebarheaderComponent } from './sidebarheader/sidebarheader.component';
+import { AboutComponent } from '../user-module/about/about.component';
+import { DocumentComponent } from '../user-module/document/document.component';
+import { SalaryComponent } from '../user-module/salary/salary.component';
+import { SecondpageComponent } from '../user-module/secondpage/secondpage.component';
+import { ThirdpageComponent } from '../user-module/thirdpage/thirdpage.component';
+import { HeaderComponent } from '../user-module/header/header.component';
+import { UserBaseComponent } from '../user-module/user-base.component';
+import { UserModule } from '../user-module/user.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 const sidebarRoutes: Routes = [
-  {
-    path: '',
-    component: SidebarComponent
-  },
+
   {
     path: 'display',
     component: DisplayComponent
@@ -17,6 +26,41 @@ const sidebarRoutes: Routes = [
   {
     path: 'sidebarheader',
     component: SidebarheaderComponent
+  },
+
+  {
+    path: '',
+    component: SidebarComponent,
+    children: [
+      {
+        path: 'user-base',
+        component: UserBaseComponent,
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
+      {
+        path: 'header',
+        component: HeaderComponent
+      },
+      {
+        path: 'document',
+        component: DocumentComponent
+      },
+      {
+        path: 'salary',
+        component: SalaryComponent
+      },
+      {
+        path: 'secondpage',
+        component: SecondpageComponent
+      },
+      {
+        path: 'thirdpage',
+        component: ThirdpageComponent
+      }
+    ]
   }
 ];
 
@@ -26,11 +70,23 @@ const sidebarRoutes: Routes = [
   declarations: [
     SidebarComponent,
     DisplayComponent,
-    SidebarheaderComponent
+    SidebarheaderComponent,
+// component impoet from user module 
+    AboutComponent,
+    DocumentComponent,
+    SalaryComponent,
+    SecondpageComponent,
+    ThirdpageComponent,
+    HeaderComponent,
+    UserBaseComponent
+
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(sidebarRoutes),
+    UserModule,
+    ReactiveFormsModule
+
   ]
 })
 export class SidebarModule { }
