@@ -42,8 +42,15 @@ export class DisplayComponent implements OnInit {
   
 
   navigateToEmployee(){
-    this.router.navigate(['sidebar/about']);
+    const employeeItem = this.list.find(item => item.name === 'Employee');
+    if(employeeItem){
+      this.router.navigate(['sidebar/about']);
+    }
   }
+
+  // navigateToEmployee(){
+  //   this.router.navigate(['sidebar/about']);
+  // }
 
   constructor(private router: Router){ }
 

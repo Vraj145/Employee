@@ -96,12 +96,12 @@ submitForm() {
   if (this.Iform.valid) {
     // Submit form
     console.log(this.Iform.value);
-    this.router.navigate(['user/thirdpage']);
+    this.router.navigate(['sidebar/thirdpage']);
   }
 }
 
 skip() {
-  this.router.navigate(['user/thirdpage']);
+  this.router.navigate(['sidebar/thirdpage']);
 }
 
 }
