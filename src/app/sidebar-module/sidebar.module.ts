@@ -13,6 +13,7 @@ import { HeaderComponent } from '../user-module/header/header.component';
 import { UserBaseComponent } from '../user-module/user-base.component';
 import { UserModule } from '../user-module/user.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -28,10 +29,16 @@ const sidebarRoutes: Routes = [
     component: SidebarheaderComponent
   },
 
+ 
+
   {
     path: '',
     component: SidebarComponent,
     children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
       {
         path: 'user-base',
         component: UserBaseComponent,
@@ -78,7 +85,8 @@ const sidebarRoutes: Routes = [
     SecondpageComponent,
     ThirdpageComponent,
     HeaderComponent,
-    UserBaseComponent
+    UserBaseComponent,
+    DashboardComponent,
 
   ],
   imports: [

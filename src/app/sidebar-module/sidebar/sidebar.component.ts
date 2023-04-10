@@ -18,7 +18,5 @@ export class SidebarComponent implements OnInit {
 
   title = 'HeaderSideNav';
   sideNavStatus: boolean = false;
-
-
   
 }

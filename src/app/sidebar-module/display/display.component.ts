@@ -40,13 +40,13 @@ export class DisplayComponent implements OnInit {
   
   ];
   
-
-  navigateToEmployee(){
-    const employeeItem = this.list.find(item => item.name === 'Employee');
-    if(employeeItem){
-      this.router.navigate(['sidebar/about']);
-    }
+ navigateTo(item: { name: string; }): void {
+  if(item.name === 'Employee'){
+    this.router.navigate(['sidebar/about']);
+  }else if (item.name === 'Dashboard'){
+    this.router.navigate(['sidebar/dashboard']);
   }
+ }
 
   // navigateToEmployee(){
   //   this.router.navigate(['sidebar/about']);
