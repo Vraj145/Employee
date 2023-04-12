@@ -13,8 +13,8 @@ export class DisplayComponent implements OnInit {
   list = [
     {
       number: '1',
-      name: 'Home',
-      icon: 'fa-solid fa-house'
+      name: 'Dashboard',
+      icon: 'fa-solid fa-gauge'
     },
     {
       number: '2',
@@ -24,8 +24,8 @@ export class DisplayComponent implements OnInit {
     },
     {
       number: '3',
-      name: 'Dashboard',
-      icon: 'fa-solid fa-gauge'
+      name: 'Self-service',
+      icon: 'fa-regular fa-user'
     },
     {
       number: '4',
@@ -41,10 +41,17 @@ export class DisplayComponent implements OnInit {
   ];
   
  navigateTo(item: { name: string; }): void {
-  if(item.name === 'Employee'){
+  if(item.name === 'Employee')
+  {
     this.router.navigate(['sidebar/about']);
-  }else if (item.name === 'Dashboard'){
+  }
+  else if (item.name === 'Dashboard')
+  {
     this.router.navigate(['sidebar/dashboard']);
+  }
+  else if (item.name === 'Self-service')
+  {
+    this.router.navigate(['sidebar/userprofile'])
   }
  }
 
