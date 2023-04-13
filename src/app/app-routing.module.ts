@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 
@@ -13,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'sidebar',
-   loadChildren: () => import('./sidebar-module/sidebar.module').then(x => x.SidebarModule)
+   loadChildren: () => import('./sidebar-module/sidebar.module').then(x => x.SidebarModule),
+   canActivate: [AuthGuard]
   }
 
 

@@ -1,0 +1,17 @@
+{
+    "employees": [
+      {
+        "id": 1,
+        "name": "John",
+        "email": "john@example.com",
+        "isEmployee": true
+      },
+      {
+        "id": 2,
+        "name": "Jane",
+        "email": "jane@example.com",
+        "isEmployee": false
+      }
+    ]
+  }
+  
