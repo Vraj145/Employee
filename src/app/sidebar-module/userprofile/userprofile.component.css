@@ -4,3 +4,28 @@
 .card{
     width: 30%;
 } */
+/* Custom CSS for Data Display Card */
+/* Custom CSS for Data Display Card with Color */
+
+/* Custom CSS for Data Display Card with Gradient Background */
+.card {
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); 
+  background: linear-gradient(to bottom right,#ffffff, #ffffff ); /* Set the gradient background color */
+  color: #000000; /* Set the text color */
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card :hover {
+  color: #2bc3d1; /* Set the link color on hover */
+}

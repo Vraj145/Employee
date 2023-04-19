@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgControlStatusGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'empmng-thirdpage',
@@ -7,6 +8,9 @@ import { FormControl, FormGroup, NgControlStatusGroup, Validators } from '@angul
   styleUrls: ['./thirdpage.component.css']
 })
 export class ThirdpageComponent implements OnInit{
+  // route: any;
+
+  constructor(private router:Router){}
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
@@ -73,8 +77,9 @@ export class ThirdpageComponent implements OnInit{
     });
 
     if(this.Iform.valid){
-      console.log(this.Iform.value)
+      console.log(this.Iform.value);
+
+      this.router.navigate(['sidebar/about']);
     }
 }
 }
-

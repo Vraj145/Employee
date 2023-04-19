@@ -36,7 +36,7 @@
       
       <div class="col">
         <label for="datepicker" class="form-label">Date Of Birth:</label>
-        <input type="date" class="form-control" id="datepicker" name="birthday" formControlName="birthday" />
+        <input type="date" class="form-control" id="datepicker" name="birthday" formControlName="birthday"/>
         <span *ngIf="Iform.get('birthday')?.invalid && Iform.get('birthday')?.touched">
           <span style="color: red" *ngIf="Iform.get('birthday')?.errors?.['required']">Date of birth is required.</span>
         </span>
@@ -168,7 +168,7 @@
 
     <div class="col">
       <label for="datepicker1" class="form-label">Date Of Joining:</label>
-      <input type="date" class="form-control" id="datepicker1" formControlName="DateOfJoining" required/>
+      <input type="date" class="form-control" id="datepicker1" name="DateOfJoining" formControlName="DateOfJoining" required/>
       <span *ngIf="Iform.get('DateOfJoining')?.invalid && Iform.get('DateOfJoining')?.touched">
         <span style="color: red" *ngIf="Iform.get('DateOfJoining')?.errors?.['required']">Joining Date is required.</span>
       </span>

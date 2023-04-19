@@ -1,0 +1,83 @@
+<!-- 
+<div class="add-employee">
+    <button type="button" class="btn btn-outline-dark btn-lg">Apply</button>
+</div> -->
+<div class="card m-1 mt-2">
+    <div class="card-body">
+        <h2 class="card-title">Apply Leave</h2> 
+        <form class="row g-3" [formGroup]="leaveform" (ngSubmit)="submitForm()">
+            <div class="col-md-6">
+              <label class="form-label" for="type-text">Employee ID:</label>
+              <input type="text" id="type-text" class="form-control" placeholder="Employee ID" name="EmployeeID" formControlName="EmployeeID" />
+          
+              <span style="color: red;" *ngIf="EmployeeID && EmployeeID.errors && (EmployeeID.touched || EmployeeID.dirty)">
+                <span *ngIf="EmployeeID.errors['required']">Name is required.</span>
+                <span *ngIf="EmployeeID.errors['pattern']">Name must contain only letters.</span>
+              </span>
+            </div>
+          
+            <div class="col-md-6">
+              <label class="form-label" for="leave">Leave Type:</label>
+              <select id="leave" class="form-select" formControlName="leave">
+                <option value="default" selected>Select</option>
+          
+                <option *ngFor="let option of leave; let i=index;" value="{{i}}">{{option | titlecase}}</option>
+              </select>
+            </div>
+          
+            <div class="col-md-6">
+              <label for="datepicker1" class="form-label">From Date:</label>
+              <input type="date" class="form-control" id="datepicker1" name="FromDate" formControlName="FromDate" required
+                (change)="onFromDateChange($event)" />
+              <span *ngIf="leaveform.get('FromDate')?.invalid && leaveform.get('FromDate')?.touched">
+                <span style="color: red" *ngIf="leaveform.get('FromDate')?.errors?.['required']"> Date is required.</span>
+              </span>
+            </div>
+          
+            <div class="col-md-6">
+              <label for="datepicker" class="form-label">To Date:</label>
+              <input type="date" class="form-control" id="datepicker" name="ToDate" formControlName="ToDate" [min]="minToDate"
+                [attr.disabled]="!leaveform.get('FromDate')?.value ? true : null" />
+              <span *ngIf="leaveform.get('ToDate')?.invalid && leaveform.get('ToDate')?.touched">
+                <span style="color: red" *ngIf="leaveform.get('ToDate')?.errors?.['required']">Date is required.</span>
+              </span>
+            </div>
+          
+              
+
+            <div class="col-md-6">
+                <label class="form-label" for="Day">Day</label>
+                <select  id="Day" class="form-select" formControlName="Day">
+                 <option value="default" selected>Select</option> 
+          
+                  <option *ngFor="let option of Day; let i=index;
+                   "value="{{i}}">{{option | titlecase}}</option>">
+          
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label" for="exampleInputEmail2">Official Email:</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
+          placeholder="Enter email" name="OfficialEmail" formControlName="OfficialEmail"/>
+          <!-- <span style="color: red;" *ngIf="OfficialEmail && OfficialEmail.invalid && OfficialEmail.touched">Write in proper Email Format</span> -->
+
+          <span style="color: red;" *ngIf="OfficialEmail && OfficialEmail.errors && (OfficialEmail.touched || OfficialEmail.dirty)">
+            <span *ngIf="OfficialEmail.errors['required']">Email is required.</span>
+            <span *ngIf="OfficialEmail.errors['email']">Invalid email format.</span>
+          </span>
+                
+            </div>
+
+            <div class="col-md-6">
+                <label for="exampleFormControlTextarea1" class="form-label">Reason</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="Reason" rows="3"></textarea>
+            </div>
+
+            <div class="col-12 d-flex justify-content-start">
+                <button type="submit" class="btn btn-dark">Apply Leave</button>
+            </div>
+
+        </form>
+    </div>
+</div>

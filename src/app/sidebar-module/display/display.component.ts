@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'empmng-display',
   templateUrl: './display.component.html',
@@ -29,11 +30,16 @@ export class DisplayComponent implements OnInit {
     },
     {
       number: '4',
+      name: 'Leave',
+      icon: 'fa-sharp fa-solid fa-right-from-bracket'
+    },
+    {
+      number: '5',
       name: 'Setting',
       icon: 'fa-solid fa-gear'
     },
     {
-      number: '5',
+      number: '6',
       name: 'About',
       icon: 'fa-solid fa-circle-info'
     }
@@ -52,6 +58,10 @@ export class DisplayComponent implements OnInit {
   else if (item.name === 'Self-service')
   {
     this.router.navigate(['sidebar/userprofile'])
+  }
+  else if (item.name === 'Leave')
+  {
+    this.router.navigate(['sidebar/leave'])
   }
  }
 
