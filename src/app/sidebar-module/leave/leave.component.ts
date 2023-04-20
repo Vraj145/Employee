@@ -40,6 +40,12 @@ export class LeaveComponent implements OnInit {
     this.minToDate = new Date(selectedDate).toISOString().split('T')[0];
   }
 
+  get isFullDayEnabled(): boolean {
+    const FromDate = this.leaveform.get('FromDate')?.value;
+    const ToDate = this.leaveform.get('ToDate')?.value;
+    return !FromDate || !ToDate || FromDate === ToDate;
+  }
+
   leave = [
     'Casual leave',
     'compensatory off',
@@ -88,7 +94,10 @@ export class LeaveComponent implements OnInit {
       control.markAsDirty();
       control.updateValueAndValidity();
     });
-
+  
+    // Mark form as touched to trigger validation messages
+    this.leaveform.markAllAsTouched();
+  
     if (this.leaveform.valid) {
       // data submits after all valid
       console.log(this.leaveform.value);
@@ -97,4 +106,5 @@ export class LeaveComponent implements OnInit {
       this.router.navigate(['sidebar/dashboard']);
     }
   }
+  
 }
