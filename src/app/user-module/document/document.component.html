@@ -1,5 +1,5 @@
 <empmng-header></empmng-header>
-<form class="">
+<form class="" [formGroup]="documentform" (ngSubmit)="submitForm()">
 
 <h5 class="modal-title fs-5 pl-2" id="exampleModalLabel">Employee Documents:</h5>
 
@@ -21,6 +21,6 @@
     </div>
 </div>
 
-<button type="button" class="btn btn-info m-lg-3">Add</button>
+<button type="submit" class="btn btn-info m-lg-3">Add</button>
 
 </form>

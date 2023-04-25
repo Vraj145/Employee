@@ -1,0 +1,57 @@
+<p>addexpence works!</p>
+<!--  -->
+<form class="" [formGroup]="expenceform">
+
+<div class="row mt-3">
+
+  <div class="col w-50">
+    <label class="form-label" for="Categeory">Categeory:</label>
+    <select  id="Categeory" class="form-select" formControlName="Categeory">
+     <option value="default" selected>Select </option> 
+
+      <option *ngFor="let option of Category; let i=index;
+       "value="{{i}}">{{option | titlecase}}</option>">
+
+    </select>
+  </div>
+
+  <div class="col">
+<!--  -->
+  </div>
+
+</div>
+
+<div class="row mt-3">
+
+    <div class="col">
+        <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="Amount">Amount:</label>
+              <input type="number" id="typeNumber" class="form-control" name="Amount" formControlName="Amount" pattern="[0-9]{10}"/>
+             
+              
+            </div>
+          </div>
+    </div>
+
+    <div class="col">
+      
+            <label for="datepicker" class="form-label">Date:</label>
+            <input type="date" class="form-control" id="datepicker" name="Date" formControlName="Date"/>
+            <span *ngIf="expenceform.get('Date')?.invalid && expenceform.get('Date')?.touched">
+              <span style="color: red" *ngIf="expenceform.get('Date')?.errors?.['required']">Date is required.</span>
+            </span> 
+    </div>
+   
+</div>
+
+<div class="col-md-6 mt-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Reason</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="Reason" rows="3"></textarea>
+    <span style="color: red;" *ngIf="expenceform.get('Reason')?.invalid && expenceform.get('Reason')?.touched">
+      <span *ngIf="expenceform.get('Reason')?.errors?.['required']">Reason is required.</span>
+    </span>
+  </div>
+
+
+</form>

@@ -15,6 +15,7 @@ export class LeaveComponent implements OnInit {
   ngOnInit(): void {
     this.minToDate = new Date().toISOString().split('T')[0]; // initialize to current date
   }
+  
 
   onFromDateChange(event: Event) {
     const selectedDate = (<HTMLInputElement>event.target).value;

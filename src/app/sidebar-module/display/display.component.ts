@@ -35,16 +35,37 @@ export class DisplayComponent implements OnInit {
     },
     {
       number: '5',
-      name: 'Setting',
-      icon: 'fa-solid fa-gear'
+      name: 'About',
+      icon: 'fa-solid fa-circle-info',
+      dropdownItems: [
+        {
+          name: 'Travell Request',
+          routerLink: 'sidebar/travelexpence'
+        },
+        {
+          name: 'Expense',
+          routerLink: 'sidebar/reimbursement'
+        }
+       
+      ]
+
+      
     },
     {
       number: '6',
-      name: 'About',
-      icon: 'fa-solid fa-circle-info'
+      name: 'Setting',
+      icon: 'fa-solid fa-gear'
     }
-  
+    
   ];
+travelexpence: any;
+
+  constructor(private router: Router){ }
+
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+  }
+
   
  navigateTo(item: { name: string; }): void {
   if(item.name === 'Employee')
@@ -64,16 +85,12 @@ export class DisplayComponent implements OnInit {
     this.router.navigate(['sidebar/leave'])
   }
  }
-
-  // navigateToEmployee(){
-  //   this.router.navigate(['sidebar/about']);
-  // }
-
-  constructor(private router: Router){ }
-
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-  }
+ navigateToAboutDropdownItem(item: { name: string; routerLink: string; }): void {
+  this.router.navigate([item.routerLink]);
+}
 
 
 }
+
+
+

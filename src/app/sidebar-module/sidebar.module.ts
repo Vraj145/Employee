@@ -16,6 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { LeaveComponent } from './leave/leave.component';
+import { ReimbursementComponent } from './reimbursement/reimbursement.component';
+import { TravelexpenceComponent } from './travelexpence/travelexpence.component';
+import { AddexpenceComponent } from './addexpence/addexpence.component';
 
 
 
@@ -46,6 +49,18 @@ const sidebarRoutes: Routes = [
       {
         path: 'leave',
         component: LeaveComponent
+      },
+      {
+        path: 'reimbursement',
+        component: ReimbursementComponent
+      },
+      {
+        path: 'addexpence',
+        component: AddexpenceComponent
+      },
+      {
+        path: 'travelexpence',
+        component: TravelexpenceComponent
       },
       {
         path: 'user-base',
@@ -97,6 +112,9 @@ const sidebarRoutes: Routes = [
     DashboardComponent,
     UserprofileComponent,
     LeaveComponent,
+    ReimbursementComponent,
+    TravelexpenceComponent,
+    AddexpenceComponent,
 
   ],
   imports: [
