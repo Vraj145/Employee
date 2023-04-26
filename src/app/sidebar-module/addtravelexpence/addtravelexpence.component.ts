@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup,FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'empmng-leave',
-  templateUrl: './leave.component.html',
-  styleUrls: ['./leave.component.css']
+  selector: 'empmng-addtravelexpence',
+  templateUrl: './addtravelexpence.component.html',
+  styleUrls: ['./addtravelexpence.component.css']
 })
-export class LeaveComponent implements OnInit {
+export class AddtravelexpenceComponent implements OnInit{
+
+
   minToDate: string='';
   isFromDateDisabled: boolean = false;
   isToDateDisabled: boolean = false;
@@ -23,7 +25,7 @@ export class LeaveComponent implements OnInit {
 
   onFromDateChange(event: Event) {
     const selectedDate = (<HTMLInputElement>event.target).value;
-    const toDateControl = this.leaveform.get('ToDate');
+    const toDateControl = this.Travelexpenceform.get('ToDate');
 
     if (toDateControl?.value && new Date(toDateControl.value) < new Date(selectedDate)) {
       toDateControl.setValue(selectedDate);
@@ -35,7 +37,7 @@ export class LeaveComponent implements OnInit {
 
   onToDateChange(event: Event) {
     const selectedDate = (<HTMLInputElement>event.target).value;
-    const fromDateControl = this.leaveform.get('FromDate');
+    const fromDateControl = this.Travelexpenceform.get('FromDate');
 
     if (fromDateControl?.value && new Date(fromDateControl.value) > new Date(selectedDate)) {
       fromDateControl.setValue(selectedDate);
@@ -46,67 +48,48 @@ export class LeaveComponent implements OnInit {
   }
 
   get isFullDayEnabled(): boolean {
-    const FromDate = this.leaveform.get('FromDate')?.value;
-    const ToDate = this.leaveform.get('ToDate')?.value;
+    const FromDate = this.Travelexpenceform.get('FromDate')?.value;
+    const ToDate = this.Travelexpenceform.get('ToDate')?.value;
     return !FromDate || !ToDate || FromDate === ToDate;
   }
 
-  leave = [
-    'Casual leave',
-    'compensatory off',
-    'Optional Holiday'
-  ];
 
-  Day = [
-    'Full Day',
-    'First Half',
-    'Second Half'
-  ];
-
-
-  leaveform = new FormGroup({
-    EmployeeID: new FormControl('', [Validators.required]),
-    leave: new FormControl('Casual leave', [Validators.required]),
+  Travelexpenceform = new FormGroup({
     FromDate: new FormControl('', [Validators.required]),
     ToDate: new FormControl('', [Validators.required]),
-    Day: new FormControl('Full Day', [Validators.required]),
-    OfficialEmail: new FormControl('', [Validators.required]),
-    Reason: new FormControl('', [Validators.required])
+    Place: new FormControl('',[Validators.required])
   });
 
-  get EmployeeID() {
-    return this.leaveform.get('EmployeeID');
-  }
+
   get FromDate() {
-    return this.leaveform.get('FromDate');
+    return this.Travelexpenceform.get('FromDate');
   }
   get ToDate() {
-    return this.leaveform.get('ToDate');
+    return this.Travelexpenceform.get('ToDate');
   }
-  get OfficialEmail() {
-    return this.leaveform.get('OfficialEmail');
-  }
-  get Reason() {
-    return this.leaveform.get('Reason');
-  }
+  get Place() {
+    return this.Travelexpenceform.get('Place');
+}
 
-  submitForm() {
+
+  submitform() {
     // Mark all form controls as dirty and trigger validation
-    Object.values(this.leaveform.controls).forEach((control) => {
+    Object.values(this.Travelexpenceform.controls).forEach((control) => {
       control.markAsDirty();
       control.updateValueAndValidity();
     });
   
     // Mark form as touched to trigger validation messages
-    this.leaveform.markAllAsTouched();
+    this.Travelexpenceform.markAllAsTouched();
   
-    if (this.leaveform.valid) {
+    if (this.Travelexpenceform.valid) {
       // data submits after all valid
-      console.log(this.leaveform.value);
+      console.log(this.Travelexpenceform.value);
       // Submit form
       // ...
-      this.router.navigate(['sidebar/dashboard']);
+      this.router.navigate(['sidebar/travelexpence']);
     }
   }
-  
+
+
 }

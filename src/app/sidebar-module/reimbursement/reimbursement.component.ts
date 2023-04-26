@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,10 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: './reimbursement.component.html',
   styleUrls: ['./reimbursement.component.css']
 })
-export class ReimbursementComponent {
+export class ReimbursementComponent implements OnInit{
 
 
   constructor (private router:Router){ }
+  
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
 
   onAddRecordClick(){

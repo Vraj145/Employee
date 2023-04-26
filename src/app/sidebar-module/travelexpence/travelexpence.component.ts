@@ -6,9 +6,15 @@ import { Router } from '@angular/router';
   templateUrl: './travelexpence.component.html',
   styleUrls: ['./travelexpence.component.css']
 })
-export class TravelexpenceComponent  {
+export class TravelexpenceComponent  implements OnInit{
 
+  constructor(private router: Router){ }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
-
+  onAddRecordClick(){
+    this.router.navigate(['sidebar/addtravelexpence'])
+  }
 
 }

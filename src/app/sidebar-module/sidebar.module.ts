@@ -19,6 +19,7 @@ import { LeaveComponent } from './leave/leave.component';
 import { ReimbursementComponent } from './reimbursement/reimbursement.component';
 import { TravelexpenceComponent } from './travelexpence/travelexpence.component';
 import { AddexpenceComponent } from './addexpence/addexpence.component';
+import { AddtravelexpenceComponent } from './addtravelexpence/addtravelexpence.component';
 
 
 
@@ -63,6 +64,11 @@ const sidebarRoutes: Routes = [
         component: TravelexpenceComponent
       },
       {
+        path: 'addtravelexpence',
+        component: AddtravelexpenceComponent
+
+      },
+      {
         path: 'user-base',
         component: UserBaseComponent,
       },
@@ -101,6 +107,12 @@ const sidebarRoutes: Routes = [
     SidebarComponent,
     DisplayComponent,
     SidebarheaderComponent,
+    DashboardComponent,
+    UserprofileComponent,
+    LeaveComponent,
+    ReimbursementComponent,
+    TravelexpenceComponent,
+    AddexpenceComponent,
 // component impoet from user module 
     AboutComponent,
     DocumentComponent,
@@ -109,12 +121,8 @@ const sidebarRoutes: Routes = [
     ThirdpageComponent,
     HeaderComponent,
     UserBaseComponent,
-    DashboardComponent,
-    UserprofileComponent,
-    LeaveComponent,
-    ReimbursementComponent,
-    TravelexpenceComponent,
-    AddexpenceComponent,
+    AddtravelexpenceComponent,
+    
 
   ],
   imports: [

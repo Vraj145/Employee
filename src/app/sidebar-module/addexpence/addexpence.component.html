@@ -1,35 +1,42 @@
 <p>addexpence works!</p>
 <!--  -->
-<form class="" [formGroup]="expenceform">
+<form class="" [formGroup]="expenceform" (ngSubmit)="submitform()">
 
-<div class="row mt-3">
 
-  <div class="col w-50">
-    <label class="form-label" for="Categeory">Categeory:</label>
-    <select  id="Categeory" class="form-select" formControlName="Categeory">
-     <option value="default" selected>Select </option> 
-
-      <option *ngFor="let option of Category; let i=index;
-       "value="{{i}}">{{option | titlecase}}</option>">
-
+  <div class="col w-50 mt-3">
+    <label class="form-label" for="Category">Category:</label>
+    <select id="Category" class="form-select" formControlName="Category">
+        <option value="default" selected>Select </option>
+        <option *ngFor="let option of Category; let i=index; " value="{{option}}">{{option | titlecase}}</option>
     </select>
-  </div>
-
-  <div class="col">
-<!--  -->
-  </div>
-
+    <span style="color: red;" *ngIf="expenceform.get('Category')?.invalid && expenceform.get('Category')?.touched">
+        <span *ngIf="expenceform.get('Category')?.errors?.['required']">Category is required.</span>
+    </span>
 </div>
 
-<div class="row mt-3">
+<div class="col w-50 mt-3" *ngIf="showTravelIdDropdown">
+    <label class="form-label" for="Travelid">Travel Id:</label>
+    <select id="Travelid" class="form-select" formControlName="Travelid">
+        <option value="default" selected>Select </option>
+        <option *ngFor="let option of Travelid; let i=index; " value="{{option}}">{{option | titlecase}}</option>
+    </select>
+    <span style="color: red;" *ngIf="expenceform.get('Travelid')?.invalid && expenceform.get('Travelid')?.touched">
+        <span *ngIf="expenceform.get('Travelid')?.errors?.['required']">Travel Id is required.</span>
+    </span>
+</div>
 
+
+  
+
+<div class="row mt-3">
     <div class="col">
         <div class="col">
             <div class="form-outline">
               <label class="form-label" for="Amount">Amount:</label>
-              <input type="number" id="typeNumber" class="form-control" name="Amount" formControlName="Amount" pattern="[0-9]{10}"/>
-             
-              
+              <input type="number" id="Amount" class="form-control" name="Amount" formControlName="Amount" required/>
+              <span style="color: red" *ngIf="expenceform.get('Amount')?.invalid && expenceform.get('Amount')?.touched">
+                <span *ngIf="expenceform.get('Amount')?.errors?.['required']">Amount is required.</span>
+            </span>
             </div>
           </div>
     </div>
@@ -53,5 +60,6 @@
     </span>
   </div>
 
+  <button type="submit" class="btn btn-info btn-lg  m-3">Add</button>
 
 </form>
