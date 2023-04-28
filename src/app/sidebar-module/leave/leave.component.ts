@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -45,23 +45,35 @@ export class LeaveComponent implements OnInit {
     this.minToDate = new Date(selectedDate).toISOString().split('T')[0];
   }
 
-  get isFullDayEnabled(): boolean {
-    const FromDate = this.leaveform.get('FromDate')?.value;
-    const ToDate = this.leaveform.get('ToDate')?.value;
-    return !FromDate || !ToDate || FromDate === ToDate;
-  }
+  // get isFullDayEnabled(): boolean {
+  //   const FromDate = this.leaveform.get('FromDate')?.value;
+  //   const ToDate = this.leaveform.get('ToDate')?.value;
+  //   return !FromDate || !ToDate || FromDate === ToDate;
+  // }
 
+  datesBetween(startDate: string, endDate: string): { date: Date, dayPeriod: string }[] {
+  const dates = [];
+  let currentDate = new Date(startDate);
+  const end = new Date(endDate);
+  while (currentDate <= end) {
+    dates.push({ date: new Date(currentDate), dayPeriod: 'fullDay' }); // default value is full day
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+  return dates;
+}
+
+  
   leave = [
     'Casual leave',
     'compensatory off',
     'Optional Holiday'
   ];
 
-  Day = [
-    'Full Day',
-    'First Half',
-    'Second Half'
-  ];
+  // Day = [
+  //   'Full Day',
+  //   'First Half',
+  //   'Second Half'
+  // ];
 
 
   leaveform = new FormGroup({
@@ -69,9 +81,10 @@ export class LeaveComponent implements OnInit {
     leave: new FormControl('Casual leave', [Validators.required]),
     FromDate: new FormControl('', [Validators.required]),
     ToDate: new FormControl('', [Validators.required]),
-    Day: new FormControl('Full Day', [Validators.required]),
-    OfficialEmail: new FormControl('', [Validators.required]),
-    Reason: new FormControl('', [Validators.required])
+    // Day: new FormControl('Full Day', [Validators.required]),
+    OfficialEmail: new FormControl('', [Validators.required,Validators.email]),
+    Reason: new FormControl('', [Validators.required]),
+    dayPeriods: new FormArray([])
   });
 
   get EmployeeID() {
@@ -89,6 +102,7 @@ export class LeaveComponent implements OnInit {
   get Reason() {
     return this.leaveform.get('Reason');
   }
+  
 
   submitForm() {
     // Mark all form controls as dirty and trigger validation
