@@ -20,9 +20,9 @@
         <option value="default" selected>Select </option>
         <option *ngFor="let option of Travelid; let i=index; " value="{{option}}">{{option | titlecase}}</option>
     </select>
-    <span style="color: red;" *ngIf="expenceform.get('Travelid')?.invalid && expenceform.get('Travelid')?.touched">
+    <!-- <span style="color: red;" *ngIf="expenceform.get('Travelid')?.invalid && expenceform.get('Travelid')?.touched">
         <span *ngIf="expenceform.get('Travelid')?.errors?.['required']">Travel Id is required.</span>
-    </span>
+    </span> -->
 </div>
 
 

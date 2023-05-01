@@ -35,8 +35,8 @@ export class DisplayComponent implements OnInit {
     },
     {
       number: '5',
-      name: 'About',
-      icon: 'fa-solid fa-circle-info',
+      name: 'Reimbursement',
+      icon: 'fa-solid fa-money-bill',
       dropdownItems: [
         {
           name: 'Travell Request',

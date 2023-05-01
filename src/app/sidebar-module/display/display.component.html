@@ -18,8 +18,8 @@
       <li class="nav-list-item" *ngFor="let item of list">
         <i class="{{item.icon}}"></i>
         <span>
-          <a (click)="navigateTo(item)" *ngIf="item.name !== 'About'">{{item.name}}</a>
-          <div class="dropdown" *ngIf="item.name === 'About'">
+          <a (click)="navigateTo(item)" *ngIf="item.name !== 'Reimbursement'">{{item.name}}</a>
+          <div class="dropdown" *ngIf="item.name === 'Reimbursement'">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               {{item.name}} <span class="caret"></span>
             </a>

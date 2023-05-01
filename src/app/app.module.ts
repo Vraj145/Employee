@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,8 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule  // Add HttpClientModule to imports
-    
+    HttpClientModule,  // Add HttpClientModule to imports
+    FormsModule
   
   ],
   providers: [],

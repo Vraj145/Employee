@@ -46,8 +46,35 @@
               </span>
             </div>
           
-              
-
+            <div class="table-container" style="max-height: 200px; overflow-y: auto;">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Day Period</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngIf="leaveform.get('FromDate')?.value && leaveform.get('ToDate')?.value">
+                    <tr *ngFor="let date of datesBetween(leaveform.get('FromDate')?.value ?? '', leaveform.get('ToDate')?.value ?? '')">
+                      <td>{{ date.date | date: 'yyyy-MM-dd' }}</td>
+                      <td>
+                        <select class="form-select" name="dayPeriod{{ date.date | date: 'yyyyMMdd' }}" id="dayPeriod{{ date.date | date: 'yyyyMMdd' }}">
+                          <option value="fullDay">Full Day</option>
+                          <option value="firstHalf">First Half</option>
+                          <option value="secondHalf">Second Half</option>
+                        </select>
+                      </td>
+                    </tr>
+                    
+                  </ng-container>
+                </tbody>
+              </table>
+            </div>
+            
+            
+        
+          <!-- 
             <div class="col-md-6">
               <label class="form-label" for="Day">Day</label>
               <select id="Day" class="form-select" formControlName="Day">
@@ -57,7 +84,7 @@
               <span style="color: red;" *ngIf="leaveform.get('Day')?.invalid && leaveform.get('Day')?.touched">
                 <span *ngIf="leaveform.get('Day')?.errors?.['required']">Please select a day.</span>
               </span>
-            </div>
+            </div> -->
 
             <div class="col-md-6">
                 <label class="form-label" for="exampleInputEmail2">Official Email:</label>

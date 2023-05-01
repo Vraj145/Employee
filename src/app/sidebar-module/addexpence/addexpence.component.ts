@@ -34,7 +34,7 @@ export class AddexpenceComponent implements OnInit{
   expenceform = new FormGroup({
     
     Category : new FormControl('', [Validators.required]),
-    Travelid : new FormControl('', [Validators.required]),
+    Travelid : new FormControl('', []),
     Amount : new FormControl('',[Validators.required]),
     Date : new FormControl('',[Validators.required]),
     Reason: new FormControl('',[Validators.required]),
