@@ -86,7 +86,8 @@ export class LeaveComponent implements OnInit {
     // Day: new FormControl('Full Day', [Validators.required]),
     OfficialEmail: new FormControl('', [Validators.required,Validators.email]),
     Reason: new FormControl('', [Validators.required]),
-     dayPeriod : new FormArray([])
+    dayPeriod : new FormArray([])
+
   });
 
   get EmployeeID() {
@@ -104,6 +105,7 @@ export class LeaveComponent implements OnInit {
   get Reason() {
     return this.leaveform.get('Reason');
   }
+  
 
   submitForm() {
     // Mark all form controls as dirty and trigger validation
