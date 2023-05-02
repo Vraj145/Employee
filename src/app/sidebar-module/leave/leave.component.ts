@@ -86,7 +86,7 @@ export class LeaveComponent implements OnInit {
     // Day: new FormControl('Full Day', [Validators.required]),
     OfficialEmail: new FormControl('', [Validators.required,Validators.email]),
     Reason: new FormControl('', [Validators.required]),
-    date : new FormControl('',[])
+     dayPeriod : new FormArray([])
   });
 
   get EmployeeID() {
