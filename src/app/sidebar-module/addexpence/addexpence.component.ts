@@ -7,8 +7,9 @@ import { Router } from '@angular/router';
   templateUrl: './addexpence.component.html',
   styleUrls: ['./addexpence.component.css']
 })
-export class AddexpenceComponent implements OnInit{
 
+
+export class AddexpenceComponent implements OnInit{
 
   showTravelIdDropdown = false;
   constructor(private router: Router){}
@@ -18,7 +19,7 @@ export class AddexpenceComponent implements OnInit{
         this.showTravelIdDropdown = (value === 'Travel');
     });
 }
-
+  
 
   Category = [
     'Travel',

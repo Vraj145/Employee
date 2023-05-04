@@ -16,7 +16,7 @@
 
 <div class="col w-50 mt-3" *ngIf="showTravelIdDropdown">
     <label class="form-label" for="Travelid">Travel Id:</label>
-    <select id="Travelid" class="form-select" formControlName="Travelid">
+    <select id="Travelid" class="form-select"  formControlName="Travelid">
         <option value="default" selected>Select </option>
         <option *ngFor="let option of Travelid; let i=index; " value="{{option}}">{{option | titlecase}}</option>
     </select>
@@ -54,7 +54,7 @@
 
 <div class="col-md-6 mt-3">
     <label for="exampleFormControlTextarea1" class="form-label">Reason</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="Reason" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="Reason" formControlName="Reason" rows="3"></textarea>
     <span style="color: red;" *ngIf="expenceform.get('Reason')?.invalid && expenceform.get('Reason')?.touched">
       <span *ngIf="expenceform.get('Reason')?.errors?.['required']">Reason is required.</span>
     </span>

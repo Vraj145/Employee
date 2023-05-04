@@ -1,0 +1,33 @@
+[  
+  {  
+    "SrNo": 1,  
+    "Category": "Travel",  
+    "Date": "2/5/2023",  
+    "Amount": 5000,  
+    "Reason": "etc"
+  },  
+  {
+    "SrNo": 2,
+    "Category": "Internet",
+    "Date": "3/5/2023",
+    "Amount": 7000,
+    "Reason": "etc"
+  },
+  {
+    "SrNo": 3,
+    "Category": "Meals",
+    "Date": "4/5/2023",
+    "Amount": 2000,
+    "Reason": "etc"
+  },
+  {
+    "SrNo": 4,
+    "Category": "Meals",
+    "Date": "4/5/2023",
+    "Amount": 2000,
+    "Reason": "etc"
+  }
+
+  
+ 
+]  

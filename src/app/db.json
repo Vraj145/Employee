@@ -1,17 +1,26 @@
-{
-    "employees": [
+  [
       {
-        "id": 1,
-        "name": "John",
-        "email": "john@example.com",
-        "isEmployee": true
+        "Sr.No": "1",
+        "Category": "Travel",
+        "Amount": "5000",
+        "Date": "5/5/23",
+        "Reason": "etc"
       },
       {
-        "id": 2,
-        "name": "Jane",
-        "email": "jane@example.com",
-        "isEmployee": false
+        "Sr.No": "2",
+        "Category": "Internet",
+        "Amount": "10000",
+        "Date": "7/5/23",
+        "Reason":"etc"
+      },
+      {
+        "Sr.No": "3",
+        "Category": "Meals",
+        "Amount" : "7000",
+        "Date" : "8/5/23",
+        "Reason":"etc"
+
       }
     ]
-  }
+ 
   

@@ -12,7 +12,7 @@ import { ThirdpageComponent } from '../user-module/thirdpage/thirdpage.component
 import { HeaderComponent } from '../user-module/header/header.component';
 import { UserBaseComponent } from '../user-module/user-base.component';
 import { UserModule } from '../user-module/user.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { LeaveComponent } from './leave/leave.component';
@@ -129,8 +129,8 @@ const sidebarRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(sidebarRoutes),
     UserModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SidebarModule { }

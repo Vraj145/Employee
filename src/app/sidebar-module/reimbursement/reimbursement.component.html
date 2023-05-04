@@ -10,7 +10,7 @@
 <table class="table table-hover mx-auto border">
     <thead class="text-center fs-5 fst-italic text-secondary">
         <tr>
-            <td>Sr.No</td>
+            <!-- <td>SrNo</td> -->
             <td>Category</td>
             <td>Date</td>
             <td>Amount</td>
@@ -19,22 +19,23 @@
     </thead>
 
     <tbody class="text-center">
-        <tr>
-            <td>1</td>
-            <td>Travel</td>
-            <td>2/5/2023</td>
-            <td>5000</td>
-            <td>etc</td>
+        <tr *ngFor="let user of users">
+            <!-- <td>{{expence.SrNo}}</td> -->
+            <td>{{user.Category}}</td>
+            <td>{{user.Date}}</td>
+            <td>{{user.Amount}}</td>
+            <td>{{user.Reason}}</td>
 
         </tr>
 
-        <tr>
+        <!-- <tr>
             <td>2</td>
             <td>Travel</td>
             <td>2/5/2023</td>
             <td>7000</td>
             <td>etc</td>
-        </tr>
+        </tr> -->
     </tbody>
 </table>
 </div>
+
