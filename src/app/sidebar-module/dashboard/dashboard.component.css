@@ -1,20 +1,4 @@
-.content{
-    margin: 5px;
-    padding: 5px;
-}
-
-.card{
-    margin: 5px;
-    padding: 14px;
-    /* color: orangered; */
-    /* background-color: rgb(173, 228, 225); */
-    
-    color: rgb(211, 110, 47);
-    background-color: rgb(167, 228, 182);
-
-    justify-content: flex-start;
-    /* text-decoration-line: underline; */
-    text-transform: capitalize;
-    display: flex;
-    
-}
+.card-body {
+    height: 200px; /* change the value to adjust the height */
+    color: black;
+  }

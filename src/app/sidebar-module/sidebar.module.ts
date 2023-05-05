@@ -20,6 +20,7 @@ import { ReimbursementComponent } from './reimbursement/reimbursement.component'
 import { TravelexpenceComponent } from './travelexpence/travelexpence.component';
 import { AddexpenceComponent } from './addexpence/addexpence.component';
 import { AddtravelexpenceComponent } from './addtravelexpence/addtravelexpence.component';
+import { LeavedataComponent } from './leavedata/leavedata.component';
 
 
 
@@ -50,6 +51,10 @@ const sidebarRoutes: Routes = [
       {
         path: 'leave',
         component: LeaveComponent
+      },
+      {
+        path: 'leavedata',
+        component: LeavedataComponent
       },
       {
         path: 'reimbursement',
@@ -122,6 +127,7 @@ const sidebarRoutes: Routes = [
     HeaderComponent,
     UserBaseComponent,
     AddtravelexpenceComponent,
+    LeavedataComponent,
     
 
   ],

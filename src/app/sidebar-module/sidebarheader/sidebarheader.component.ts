@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'empmng-sidebarheader',
@@ -10,8 +11,19 @@ export class SidebarheaderComponent implements OnInit{
   @Output() sideNavToggled = new EventEmitter<boolean>();
   menuStatus: boolean = false;
 
-  constructor(){ }
-  ngOnInit(): void {  }
+  constructor(private router:Router){ }
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+  }
+
+  goToProfile(){
+    this.router.navigate(['sidebar/userprofile']);
+  }
+
+  goToLogin(){
+    this.router.navigate(['/']); // Login is empty path by dafault
+  }
+  
 
   SideNavToggle(){
     this.menuStatus = !this.menuStatus;

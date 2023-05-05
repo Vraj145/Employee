@@ -78,11 +78,11 @@ travelexpence: any;
   }
   else if (item.name === 'Self-service')
   {
-    this.router.navigate(['sidebar/userprofile'])
+    this.router.navigate(['sidebar/userprofile']);
   }
   else if (item.name === 'Leave')
   {
-    this.router.navigate(['sidebar/leave'])
+    this.router.navigate(['sidebar/leavedata']);
   }
  }
  navigateToAboutDropdownItem(item: { name: string; routerLink: string; }): void {

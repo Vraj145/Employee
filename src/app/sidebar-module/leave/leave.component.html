@@ -6,7 +6,7 @@
     <div class="card-body">
         <h2 class="card-title">Apply Leave</h2> 
         <form class="row g-3" [formGroup]="leaveform" (ngSubmit)="submitForm()">
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <label class="form-label" for="type-text">Employee ID:</label>
               <input type="text" id="type-text" class="form-control" placeholder="Employee ID" name="EmployeeID" formControlName="EmployeeID" />
           
@@ -14,9 +14,9 @@
                 <span *ngIf="EmployeeID.errors['required']">Name is required.</span>
                 <span *ngIf="EmployeeID.errors['pattern']">Name must contain only letters.</span>
               </span>
-            </div>
-          
-            <div class="col-md-6">
+            </div> -->
+          <div class="row">
+            <div class="col-md-6 p-0" >
               <label class="form-label" for="leave">Leave Type:</label>
               <select id="leave" class="form-select" formControlName="leave">
                 <option value="default" selected>Select</option>
@@ -26,7 +26,7 @@
                 <span *ngIf="leaveform.get('leave')?.errors?.['required']">Please select a leave type.</span>
               </span>
             </div>
-            
+          </div> 
           
             <div class="col-md-6">
               <label for="datepicker1" class="form-label">From Date:</label>
