@@ -2,3 +2,53 @@
     height: 200px; /* change the value to adjust the height */
     color: black;
   }
+  .card {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-out;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-title {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .card-text {
+    margin-bottom: 0;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .col {
+    flex: 1;
+    margin: 1rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .col {
+      flex-basis: calc(50% - 2rem);
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .col {
+      flex-basis: 100%;
+    }
+  }
+  

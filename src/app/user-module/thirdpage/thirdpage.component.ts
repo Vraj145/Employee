@@ -10,10 +10,72 @@ import { Router } from '@angular/router';
 export class ThirdpageComponent implements OnInit{
   // route: any;
 
-  constructor(private router:Router){}
+  minendDate: string='';
+  isstartDateDisabled: boolean = false;
+  isendDateDisabled: boolean = false;
+
+  minEndDate: string='';
+  isStartDateDisabled: boolean = false;
+  isEndDateDisabled: boolean = false;
+
+  constructor(private router:Router){ 
+    this.minendDate='';
+    this.minEndDate='';
+  }
 
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    this.minendDate = new Date().toISOString().split('T')[0]; // initialize to current date
+    this.minEndDate = new Date().toISOString().split('T')[0]; 
+  }
+
+  onstartDateChange(event: Event) {
+    const selectedDate = (<HTMLInputElement>event.target).value;
+    const endDateControl = this.Iform.get('enddate');
+
+    if (endDateControl?.value && new Date(endDateControl.value) < new Date(selectedDate)) {
+      endDateControl.setValue(selectedDate);
+      this.isendDateDisabled = false;
+    }
+
+    this.minendDate = new Date(selectedDate).toISOString().split('T')[0];
+  }
+
+  onendDateChange(event: Event) {
+    const selectedDate = (<HTMLInputElement>event.target).value;
+    const startDateControl = this.Iform.get('startdate');
+
+    if (startDateControl?.value && new Date(startDateControl.value) > new Date(selectedDate)) {
+      startDateControl.setValue(selectedDate);
+      this.isstartDateDisabled = false;
+    }
+
+    this.minendDate = new Date(selectedDate).toISOString().split('T')[0];
+  }
+
+  /*  Start and End  */
+  
+  onStartDateChange(event: Event) {
+    const selectedDate = (<HTMLInputElement>event.target).value;
+    const EndDateControl = this.Iform.get('Enddate');
+
+    if (EndDateControl?.value && new Date(EndDateControl.value) < new Date(selectedDate)) {
+      EndDateControl.setValue(selectedDate);
+      this.isendDateDisabled = false;
+    }
+
+    this.minEndDate = new Date(selectedDate).toISOString().split('T')[0];
+  }
+
+  onEndDateChange(event: Event) {
+    const selectedDate = (<HTMLInputElement>event.target).value;
+    const StartDateControl = this.Iform.get('Startdate');
+
+    if (StartDateControl?.value && new Date(StartDateControl.value) > new Date(selectedDate)) {
+      StartDateControl.setValue(selectedDate);
+      this.isStartDateDisabled = false;
+    }
+
+    this.minEndDate = new Date(selectedDate).toISOString().split('T')[0];
   }
 
   Iform = new FormGroup ({

@@ -44,17 +44,18 @@
 
     <div class="row">
 
-            <div class="col">
+        <div class="col">
                 <label for="datepicker" class="form-label">Start Date:</label>
-                <input type="date" class="form-control" id="datepicker" name="startdate" formControlName="startdate" />
+                <input type="date" class="form-control" id="datepicker" name="startdate" formControlName="startdate" (change)="onstartDateChange($event)"/>
                 <span *ngIf="Iform.get('startdate')?.invalid && Iform.get('startdate')?.touched">
                   <span style="color: red" *ngIf="Iform.get('startdate')?.errors?.['required']">Date is required.</span>
                 </span>
-              </div>
+        </div>
 
         <div class="col">
             <label for="datepicker1" class="form-label">End Date:</label>
-                <input type="date" class="form-control" id="datepicker1" name="enddate" formControlName="enddate" />
+                <input type="date" class="form-control" id="datepicker1" name="enddate" formControlName="enddate" [min]="minendDate"
+                [attr.disabled]="!Iform.get('startdate')?.value ? true : null"/>
                 <span *ngIf="Iform.get('enddate')?.invalid && Iform.get('enddate')?.touched">
                   <span style="color: red" *ngIf="Iform.get('enddate')?.errors?.['required']">Date is required.</span>
                 </span>
@@ -98,7 +99,7 @@
 
    <div class="col">
     <label for="datepicker2" class="form-label">Start Date:</label>
-    <input type="date" class="form-control m-lg-2" id="datepicker2" name="Startdate" formControlName="Startdate" />
+    <input type="date" class="form-control m-lg-2" id="datepicker2" name="Startdate" formControlName="Startdate" (change)="onStartDateChange($event)"/>
     <span *ngIf="Iform.get('Startdate')?.invalid && Iform.get('Startdate')?.touched">
       <span style="color: red" *ngIf="Iform.get('Startdate')?.errors?.['required']">Date is required.</span>
     </span>
@@ -106,7 +107,8 @@
 
   <div class="col">
     <label for="datepicker3" class="form-label">End Date:</label>
-        <input type="date" class="form-control m-lg-2" id="datepicker3" name="Enddate" formControlName="Enddate" />
+        <input type="date" class="form-control m-lg-2" id="datepicker3" name="Enddate" formControlName="Enddate" [min]="minEndDate"
+        [attr.disabled]="!Iform.get('Startdate')?.value ? true : null"/>
         <span *ngIf="Iform.get('Enddate')?.invalid && Iform.get('Enddate')?.touched">
           <span style="color: red" *ngIf="Iform.get('Enddate')?.errors?.['required']">Date is required.</span>
         </span>
