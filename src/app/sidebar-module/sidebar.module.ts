@@ -93,7 +93,7 @@ const sidebarRoutes: Routes = [
         path: 'salary',
         component: SalaryComponent
       },
-      {
+      { 
         path: 'secondpage',
         component: SecondpageComponent
       },

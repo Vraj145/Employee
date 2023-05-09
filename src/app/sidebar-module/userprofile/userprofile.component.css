@@ -27,5 +27,24 @@
 }
 
 .card :hover {
-  color: #8a9091; /* Set the link color on hover */
+  color: rgb(105, 165, 217); /* Set the link color on hover */
+}
+
+/**/
+
+.area{
+  background-color: rgb(105, 165, 217);
+  text-align: center;
+  color: white;
+  height: 150px;
+  /* height: max-content; */
+  border-radius: 12px;
+}
+img {
+  border-radius: 50%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

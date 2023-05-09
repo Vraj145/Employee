@@ -14,8 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'sidebar',
-    loadChildren: () => import('./sidebar-module/sidebar.module').then(x => x.SidebarModule),
-   canActivate: [AuthGuard]
+    loadChildren: () => import('./sidebar-module/sidebar.module').then(x => x.SidebarModule)
+  //  canActivate: [AuthGuard]
   }
 
 
