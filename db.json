@@ -1,19 +1,19 @@
-{
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+[
+  {
+    "Firstname" : "roshan",
+    "Lastname" : "singh",
+    "birthday" : "14/05/02",
+    "gender" : "male",
+    "PersonalEmail": "abc@gmail.com",
+    "PhoneNumber" : 9754654451,
+    "EmergencyConatactNo" : 9756465425,
+    "OfficialEmail": "xyz@gmail.com",
+    "designation" : "FrontEnd Developer",
+    "department" : "Development",
+    "ReportingManager" : "Sir",
+    "DateOfJoining" : "14/7/2022",
+    "WorkLocation" : "Ahmedabad",
+    "State" : "Gujarat",
+    "Country" : "India"
   }
-}
+]

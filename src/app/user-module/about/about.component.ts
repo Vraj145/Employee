@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'empmng-about',
@@ -8,6 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit{
+
+  @ViewChild('fileInput') fileInput: any;
+
   Designation = [
     'FrontEnd Developer',
     '.Net Developer',
@@ -110,6 +115,8 @@ export class AboutComponent implements OnInit{
 
     });
     
+    this.Iform.get('birthday')?.markAsTouched();
+    this.Iform.get('DateOfJoining')?.markAsTouched();
     // console.log(this.Iform.value); 
 
     // Check if form is valid

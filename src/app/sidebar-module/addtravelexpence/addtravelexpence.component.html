@@ -8,7 +8,7 @@
         <input type="date" class="form-control" id="datepicker1" name="FromDate" formControlName="FromDate" required
           (change)="onFromDateChange($event)" />
         <span *ngIf="Travelexpenceform.get('FromDate')?.invalid && Travelexpenceform.get('FromDate')?.touched">
-          <span style="color: red" *ngIf="Travelexpenceform.get('FromDate')?.errors?.['required']"> Date is required.</span>
+          <span style="color: red" *ngIf="Travelexpenceform.get('FromDate')?.errors?.['required']">*FromDate is required.</span>
         </span>
       </div>
     
@@ -17,22 +17,19 @@
         <input type="date" class="form-control" id="datepicker" name="ToDate" formControlName="ToDate" [min]="minToDate"
           [attr.disabled]="!Travelexpenceform.get('FromDate')?.value ? true : null" />
         <span *ngIf="Travelexpenceform.get('ToDate')?.invalid && Travelexpenceform.get('ToDate')?.touched">
-          <span style="color: red" *ngIf="Travelexpenceform.get('ToDate')?.errors?.['required']">Date is required.</span>
+          <span style="color: red" *ngIf="Travelexpenceform.get('ToDate')?.errors?.['required']">*ToDate is required.</span>
         </span>
       </div>
 
     </div>
 
-    <div class="col w-50 mt-3">
-
+    <div class="mt-3 place-input">
       <label class="form-label" for="type-text">Place:</label>
-      <input type="text"  id="type-text" class="form-control" placeholder="Place" name="Place" formControlName="Place"/>
-    <!-- <span style="color: red;" *ngIf="Firstname && Firstname.invalid && Firstname.touched">Name is required</span> -->
-        <span style="color: red;" *ngIf="Place && Place.errors && (Place.touched || Place.dirty)">
-          <span *ngIf="Place.errors['required']">Name is required.</span>
-          <span *ngIf="Place.errors['pattern']">Name must contain only letters.</span>
-        </span>
-    
+      <input type="text" id="type-text" class="form-control" placeholder="Place" name="Place" formControlName="Place" />
+      <span style="color: red;" *ngIf="Place && Place.errors && (Place.touched || Place.dirty)">
+        <span *ngIf="Place.errors['required']">*Place is required.</span>
+        <span *ngIf="Place.errors['pattern']">*Place must contain only letters.</span>
+      </span>
     </div>
 
     <button type="submit" class="btn btn-info btn-lg mt-3">Add</button>

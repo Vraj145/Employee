@@ -79,7 +79,7 @@ export class LeaveComponent implements OnInit {
 
 
   leaveform = new FormGroup({
-    EmployeeID: new FormControl('', [Validators.required]),
+    // EmployeeID: new FormControl('', [Validators.required]),
     leave: new FormControl('Casual leave', [Validators.required]),
     FromDate: new FormControl('', [Validators.required]),
     ToDate: new FormControl('', [Validators.required]),
@@ -90,9 +90,9 @@ export class LeaveComponent implements OnInit {
 
   });
 
-  get EmployeeID() {
-    return this.leaveform.get('EmployeeID');
-  }
+  // get EmployeeID() {
+  //   return this.leaveform.get('EmployeeID');
+  // }
   get FromDate() {
     return this.leaveform.get('FromDate');
   }
@@ -122,7 +122,7 @@ export class LeaveComponent implements OnInit {
       console.log(this.leaveform.value);
       // Submit form
       // ...
-      this.router.navigate(['sidebar/dashboard']);
+      this.router.navigate(['sidebar/leavedata']);
     }
   }
   

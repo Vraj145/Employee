@@ -3,14 +3,14 @@
 <form class="" [formGroup]="expenceform" (ngSubmit)="submitform()">
 
 
-  <div class="col w-50 mt-3">
+  <div class="mt-3 place-input">
     <label class="form-label" for="Category">Category:</label>
     <select id="Category" class="form-select" formControlName="Category">
         <option value="default" selected>Select </option>
         <option *ngFor="let option of Category; let i=index; " value="{{option}}">{{option | titlecase}}</option>
     </select>
     <span style="color: red;" *ngIf="expenceform.get('Category')?.invalid && expenceform.get('Category')?.touched">
-        <span *ngIf="expenceform.get('Category')?.errors?.['required']">Category is required.</span>
+        <span *ngIf="expenceform.get('Category')?.errors?.['required']">*Category is required.</span>
     </span>
 </div>
 
@@ -35,7 +35,7 @@
               <label class="form-label" for="Amount">Amount:</label>
               <input type="number" id="Amount" class="form-control" name="Amount" formControlName="Amount" required/>
               <span style="color: red" *ngIf="expenceform.get('Amount')?.invalid && expenceform.get('Amount')?.touched">
-                <span *ngIf="expenceform.get('Amount')?.errors?.['required']">Amount is required.</span>
+                <span *ngIf="expenceform.get('Amount')?.errors?.['required']">*Amount is required.</span>
             </span>
             </div>
           </div>
@@ -46,7 +46,7 @@
             <label for="datepicker" class="form-label">Date:</label>
             <input type="date" class="form-control" id="datepicker" name="Date" formControlName="Date"/>
             <span *ngIf="expenceform.get('Date')?.invalid && expenceform.get('Date')?.touched">
-              <span style="color: red" *ngIf="expenceform.get('Date')?.errors?.['required']">Date is required.</span>
+              <span style="color: red" *ngIf="expenceform.get('Date')?.errors?.['required']">*Date is required.</span>
             </span> 
     </div>
    
@@ -56,7 +56,7 @@
     <label for="exampleFormControlTextarea1" class="form-label">Reason</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" name="Reason" formControlName="Reason" rows="3"></textarea>
     <span style="color: red;" *ngIf="expenceform.get('Reason')?.invalid && expenceform.get('Reason')?.touched">
-      <span *ngIf="expenceform.get('Reason')?.errors?.['required']">Reason is required.</span>
+      <span *ngIf="expenceform.get('Reason')?.errors?.['required']">*Reason is required.</span>
     </span>
   </div>
 

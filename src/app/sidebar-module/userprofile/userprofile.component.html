@@ -20,39 +20,39 @@
  <table class="table">
      
     <tbody>
-       <tr>  
+       <tr *ngFor="let about of abouts">  
          <td>First Name</td>
-         <td>Ramesh</td>  
+         <td>{{about.Firstname}}</td>  
        </tr>
  
-       <tr>
+       <tr *ngFor="let about of abouts">
          <td>Last Name</td>
-         <td>Parmar</td>
+         <td>{{about.Lastname}}</td>
        </tr>
  
-       <tr>   
+       <tr *ngFor="let about of abouts">   
          <td>Date Of Birth</td>
-         <td>14/5/2002</td>     
+         <td>{{about.birthday}}</td>     
        </tr>
  
-       <tr>
+       <tr *ngFor="let about of abouts">
         <td>Gender:</td>
-        <td>Male</td>
+        <td>{{about.gender}}</td>
       </tr>
 
-       <tr>
+       <tr *ngFor="let about of abouts">
          <td>Personal Email</td>
-         <td>abc@gmail.com</td>
+         <td>{{about.PersonalEmail}}</td>
        </tr>
 
-       <tr>
+       <tr *ngfor="let about of abouts">
          <td>Phone Number</td>
-         <td>9876543214</td>
+         <td>{{about.PhoneNumber}}</td>
        </tr>
 
-       <tr>
+       <tr *ngFor="let about of abouts">
          <td>Emergency Contact No</td>
-         <td>9876543210</td>
+         <td>{{about.EmergencyConatactNo}}</td>
        </tr>
        
        <tr>
@@ -65,7 +65,7 @@
  </div>
 
 <div class="card" style="float: right; width: 50%; height: fit-content; margin-left: 50px; margin-right: 15px;">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 5px;">
   <h4 style="padding: 10px;">Employee Information</h4>
   <a  style="float:right;"><i class="fas fa-pen"></i></a>
   </div>
@@ -73,44 +73,44 @@
   <table class="table"> 
 
     <tbody>
-        <tr>
+        <tr *ngFor="let about of abouts">
            <td>Official Email:</td>
-           <td>xyz@123@gmail.com</td>
+           <td>{{about.OfficialEmail}}</td>
         </tr>
 
-        <tr>
+        <tr *ngFor="let about of abouts">
            <td>Designation</td>
-           <td>XYZ</td>
+           <td>{{about.designation}}</td>
         </tr>
 
-        <tr>
+        <tr *ngFor="let about of abouts">
            <td>Department</td>
-           <td>ABC</td>
+           <td>{{about.department}}</td>
         </tr>
 
-        <tr>
+        <tr *ngfor="let about of abouts">
            <td>Reporting Manager</td>
-           <td>.....</td>
+           <td>{{about.ReportingManager}}</td>
         </tr>
 
-        <tr>
+        <tr *ngFor="let about of abouts">
            <td>Joining date</td>
-           <td>dd/mm/yyyy</td>
+           <td>{{about.DateOfJoining}}</td>
         </tr>
 
-        <tr>
+        <tr *ngFor="let about of abouts">
            <td>Location</td>
-           <td>Ahmedabad</td>
+           <td>{{about.WorkLocation}}</td>
         </tr>
 
-        <tr>
+        <tr *ngFor="let about of abouts">
            <td>State</td>
-           <td>Gujarat</td>
+           <td>{{about.State}}</td>
         </tr>
 
-        <tr>
+        <tr *ngFor="let about of abouts">
            <td>Country</td>
-           <td>India</td>
+           <td>{{about.Country}}</td>
         </tr>
       </tbody>
     </table>
@@ -121,8 +121,8 @@
 </div>
 
 
-<!-- 
-<div style="display: flex;">
+
+<!-- <div style="display: flex;">
 
   <div class="card" style="float: left; width: 50%; height: fit-content; margin-left: 15px; margin-top: 25px;">
     <h4 style="padding: 10px;">Work</h4> 

@@ -8,8 +8,8 @@
             <label class="form-label" for="type-text1">Education Board :</label>
            <input type="text"  id="type-text1" class="form-control m-lg-2" placeholder="State Board" name="Stateboard" formControlName="Stateboard"/>   
            <span style="color: red;" *ngIf="Stateboard && Stateboard.errors && (Stateboard.touched || Stateboard.dirty)">
-            <span *ngIf="Stateboard.errors['required']">Education board is required.</span>
-            <span *ngIf="Stateboard.errors['pattern']">Education board must contain only letters.</span>
+            <span *ngIf="Stateboard.errors['required']">*Education board is required.</span>
+            <span *ngIf="Stateboard.errors['pattern']">*Education board must contain only letters.</span>
           </span>
        </div>
 
@@ -17,8 +17,8 @@
             <label class="form-label" for="type-text2">Institution :</label>
             <input type="text"  id="type-text2" class="form-control m-lg-2" placeholder="Name Of Institute" name="Institute" formControlName="Institute" pattern="^[a-zA-Z ]*$"/>   
             <span style="color: red;" *ngIf="Institute && Institute.errors && (Institute.touched || Institute.dirty)">
-                <span *ngIf="Institute.errors['required']">Institute  name is required.</span>
-                <span *ngIf="Institute.errors['pattern']">Institute must contain only letters.</span>
+                <span *ngIf="Institute.errors['required']">*Institute  name is required.</span>
+                <span *ngIf="Institute.errors['pattern']">*Institute must contain only letters.</span>
               </span>
         </div>
 
@@ -26,8 +26,8 @@
              <label class="form-label" for="type-text3">Degree :</label>
             <input type="text"  id="type-text3" class="form-control m-lg-2" placeholder="Name Of Degree" name="Degree" formControlName="Degree" pattern="^[a-zA-Z ]*$"/>   
             <span style="color: red;" *ngIf="Degree && Degree.errors && (Degree.touched || Degree.dirty)">
-                <span *ngIf="Degree.errors['required']">Degree is required.</span>
-                <span *ngIf="Degree.errors['pattern']">Degree must contain only letters.</span>
+                <span *ngIf="Degree.errors['required']">*Degree is required.</span>
+                <span *ngIf="Degree.errors['pattern']">*Degree must contain only letters.</span>
               </span>
         </div>
 
@@ -35,8 +35,8 @@
             <label class="form-label" for="type-text4"> DegreeType:</label>
            <input type="text"  id="type-text4" class="form-control m-lg-2" placeholder="degree" name="degree" formControlName="degree" pattern="^[a-zA-Z ]*$"/>   
            <span style="color: red;" *ngIf="degree && degree.errors && (degree.touched || degree.dirty)">
-            <span *ngIf="degree.errors['required']">Degree Type is required.</span>
-            <span *ngIf="degree.errors['pattern']">Degree Type must contain only letters.</span>
+            <span *ngIf="degree.errors['required']">*Degree Type is required.</span>
+            <span *ngIf="degree.errors['pattern']">*Degree Type must contain only letters.</span>
           </span>
        </div>
 
@@ -46,45 +46,50 @@
 
         <div class="col">
                 <label for="datepicker" class="form-label">Start Date:</label>
-                <input type="date" class="form-control" id="datepicker" name="startdate" formControlName="startdate" (change)="onstartDateChange($event)"/>
+                <input type="date" style="margin-left: 8px;" class="form-control" id="datepicker" name="startdate" formControlName="startdate" (change)="onstartDateChange($event)"/>
                 <span *ngIf="Iform.get('startdate')?.invalid && Iform.get('startdate')?.touched">
-                  <span style="color: red" *ngIf="Iform.get('startdate')?.errors?.['required']">Date is required.</span>
+                  <span style="color: red" *ngIf="Iform.get('startdate')?.errors?.['required']">*StartDate is required.</span>
                 </span>
         </div>
 
         <div class="col">
             <label for="datepicker1" class="form-label">End Date:</label>
-                <input type="date" class="form-control" id="datepicker1" name="enddate" formControlName="enddate" [min]="minendDate"
+                <input type="date" style="margin-left: 7px;" class="form-control" id="datepicker1" name="enddate" formControlName="enddate" [min]="minendDate"
                 [attr.disabled]="!Iform.get('startdate')?.value ? true : null"/>
                 <span *ngIf="Iform.get('enddate')?.invalid && Iform.get('enddate')?.touched">
-                  <span style="color: red" *ngIf="Iform.get('enddate')?.errors?.['required']">Date is required.</span>
+                  <span style="color: red" *ngIf="Iform.get('enddate')?.errors?.['required']">*EndDate is required.</span>
                 </span>
         </div>
 
         <div class="col">
-            <div class="form-outline w-50">
-                <label class="form-label" for="typeNumber">Percentage:</label>
-                <input type="number" id="typeNumber" class="form-control" name="Percentage" formControlName="Percentage"
-                       min="0" max="100"
-                       [ngClass]="{'is-invalid': Percentage?.touched && Percentage?.invalid}">
-                <div class="invalid-feedback" *ngIf="Percentage?.touched && Percentage?.invalid" style="color: red">
-                    Please enter a percentage between 0 and 100.
-                </div>
+          <div class="form-outline w-50">
+            <label class="form-label" for="typeNumber">Percentage:</label>
+            <input type="number" style="margin-left: 8px;" id="typeNumber" class="form-control" name="Percentage" formControlName="Percentage"
+                   min="0" max="100" 
+                   [ngClass]="{'is-invalid': Percentage?.touched && Percentage?.invalid}" >
+            <div class="invalid-feedback" *ngIf="Percentage?.touched && Percentage?.invalid" style="color: red">
+              <span *ngIf="Percentage?.errors?.['required']">*Percentage is required.</span>
+              <span *ngIf="Percentage?.errors && !Percentage?.errors?.['required']">*Please enter a percentage between 0 and 100.</span>
             </div>
+          </div>
         </div>
-
+        
+        
+        <div class="col"></div>
     </div>
 
-    <h5 class="modal-title fs-5 pl-2" id="exampleModalLabel">Experience :-</h5>
+    <button type="add" class="btn btn-primary">+Add</button>
 
-    <div class="row mt-3">
+    <h5 class="modal-title fs-5 pl-2 mt-2" id="exampleModalLabel">Experience :-</h5>
+
+    <div class="row mt-1">
 
         <div class="col">
             <label class="form-label" for="type-text5">Organization:</label>
            <input type="text"  id="type-text5" class="form-control m-lg-2" placeholder="Organization Name" name="organization" formControlName="organization" pattern="^[a-zA-Z ]*$"/>   
            <span style="color: red;" *ngIf="organization && organization.errors && (organization.touched || organization.dirty)">
-            <span *ngIf="organization.errors['required']">Organization is required.</span>
-            <span *ngIf="organization.errors['pattern']">Organization must contain only letters.</span>
+            <span *ngIf="organization.errors['required']">*Organization is required.</span>
+            <span *ngIf="organization.errors['pattern']">*Organization must contain only letters.</span>
           </span>
        </div>
 
@@ -92,8 +97,8 @@
         <label class="form-label" for="type-text6">Job Title:</label>
        <input type="text"  id="type-text6" class="form-control m-lg-2" placeholder="Enter Job Information" name="jobtitle" formControlName="jobtitle" pattern="^[a-zA-Z ]*$"/>   
        <span style="color: red;" *ngIf="jobtitle && jobtitle.errors && (jobtitle.touched || jobtitle.dirty)">
-        <span *ngIf="jobtitle.errors['required']">Job Title is required.</span>
-        <span *ngIf="jobtitle.errors['pattern']">Job Title must contain only letters.</span>
+        <span *ngIf="jobtitle.errors['required']">*Job Title is required.</span>
+        <span *ngIf="jobtitle.errors['pattern']">*Job Title must contain only letters.</span>
       </span>
    </div>
 
@@ -101,7 +106,7 @@
     <label for="datepicker2" class="form-label">Start Date:</label>
     <input type="date" class="form-control m-lg-2" id="datepicker2" name="Startdate" formControlName="Startdate" (change)="onStartDateChange($event)"/>
     <span *ngIf="Iform.get('Startdate')?.invalid && Iform.get('Startdate')?.touched">
-      <span style="color: red" *ngIf="Iform.get('Startdate')?.errors?.['required']">Date is required.</span>
+      <span style="color: red" *ngIf="Iform.get('Startdate')?.errors?.['required']">*StartDate is required.</span>
     </span>
   </div>
 
@@ -110,11 +115,11 @@
         <input type="date" class="form-control m-lg-2" id="datepicker3" name="Enddate" formControlName="Enddate" [min]="minEndDate"
         [attr.disabled]="!Iform.get('Startdate')?.value ? true : null"/>
         <span *ngIf="Iform.get('Enddate')?.invalid && Iform.get('Enddate')?.touched">
-          <span style="color: red" *ngIf="Iform.get('Enddate')?.errors?.['required']">Date is required.</span>
+          <span style="color: red" *ngIf="Iform.get('Enddate')?.errors?.['required']">*EndDate is required.</span>
         </span>
     </div>
 
     </div>
 
-    <button type="submit" class="btn btn-dark">Submit</button>
+    <button type="submit" style="margin-left: 30px; margin-top: 5px;"  class="btn btn-dark">Submit</button>
 </form>

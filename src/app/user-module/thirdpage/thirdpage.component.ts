@@ -22,7 +22,7 @@ export class ThirdpageComponent implements OnInit{
     this.minendDate='';
     this.minEndDate='';
   }
-
+ 
   ngOnInit(): void {
     this.minendDate = new Date().toISOString().split('T')[0]; // initialize to current date
     this.minEndDate = new Date().toISOString().split('T')[0]; 
@@ -77,6 +77,7 @@ export class ThirdpageComponent implements OnInit{
 
     this.minEndDate = new Date(selectedDate).toISOString().split('T')[0];
   }
+
 
   Iform = new FormGroup ({
     
@@ -138,7 +139,13 @@ export class ThirdpageComponent implements OnInit{
       control.updateValueAndValidity();
     });
 
-    if(this.Iform.valid){
+    this.Iform.get('Percentage')?.markAsTouched();
+    this.Iform.get('startdate')?.markAsTouched();
+    this.Iform.get('enddate')?.markAsTouched();
+    this.Iform.get('Startdate')?.markAsTouched();
+    this.Iform.get('Enddate')?.markAsTouched();
+
+    if(this.Iform.valid ){
       console.log(this.Iform.value);
 
       this.router.navigate(['sidebar/about']);
