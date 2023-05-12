@@ -33,10 +33,10 @@
 
         <div class="col">
             <label class="form-label" for="type-text4"> DegreeType:</label>
-           <input type="text"  id="type-text4" class="form-control m-lg-2" placeholder="degree" name="degree" formControlName="degree" pattern="^[a-zA-Z ]*$"/>   
-           <span style="color: red;" *ngIf="degree && degree.errors && (degree.touched || degree.dirty)">
-            <span *ngIf="degree.errors['required']">*Degree Type is required.</span>
-            <span *ngIf="degree.errors['pattern']">*Degree Type must contain only letters.</span>
+           <input type="text"  id="type-text4" class="form-control m-lg-2" placeholder="degree Type" name="degreetype" formControlName="degreetype" pattern="^[a-zA-Z ]*$"/>   
+           <span style="color: red;" *ngIf="degreetype && degreetype.errors && (degreetype.touched || degreetype.dirty)">
+            <span *ngIf="degreetype.errors['required']">*Degree Type is required.</span>
+            <span *ngIf="degreetype.errors['pattern']">*Degree Type must contain only letters.</span>
           </span>
        </div>
 
@@ -76,50 +76,8 @@
         
         
         <div class="col"></div>
-    </div>
-
-    <button type="add" class="btn btn-primary">+Add</button>
-
-    <h5 class="modal-title fs-5 pl-2 mt-2" id="exampleModalLabel">Experience :-</h5>
-
-    <div class="row mt-1">
-
-        <div class="col">
-            <label class="form-label" for="type-text5">Organization:</label>
-           <input type="text"  id="type-text5" class="form-control m-lg-2" placeholder="Organization Name" name="organization" formControlName="organization" pattern="^[a-zA-Z ]*$"/>   
-           <span style="color: red;" *ngIf="organization && organization.errors && (organization.touched || organization.dirty)">
-            <span *ngIf="organization.errors['required']">*Organization is required.</span>
-            <span *ngIf="organization.errors['pattern']">*Organization must contain only letters.</span>
-          </span>
-       </div>
-
-       <div class="col">
-        <label class="form-label" for="type-text6">Job Title:</label>
-       <input type="text"  id="type-text6" class="form-control m-lg-2" placeholder="Enter Job Information" name="jobtitle" formControlName="jobtitle" pattern="^[a-zA-Z ]*$"/>   
-       <span style="color: red;" *ngIf="jobtitle && jobtitle.errors && (jobtitle.touched || jobtitle.dirty)">
-        <span *ngIf="jobtitle.errors['required']">*Job Title is required.</span>
-        <span *ngIf="jobtitle.errors['pattern']">*Job Title must contain only letters.</span>
-      </span>
-   </div>
-
-   <div class="col">
-    <label for="datepicker2" class="form-label">Start Date:</label>
-    <input type="date" class="form-control m-lg-2" id="datepicker2" name="Startdate" formControlName="Startdate" (change)="onStartDateChange($event)"/>
-    <span *ngIf="Iform.get('Startdate')?.invalid && Iform.get('Startdate')?.touched">
-      <span style="color: red" *ngIf="Iform.get('Startdate')?.errors?.['required']">*StartDate is required.</span>
-    </span>
-  </div>
-
-  <div class="col">
-    <label for="datepicker3" class="form-label">End Date:</label>
-        <input type="date" class="form-control m-lg-2" id="datepicker3" name="Enddate" formControlName="Enddate" [min]="minEndDate"
-        [attr.disabled]="!Iform.get('Startdate')?.value ? true : null"/>
-        <span *ngIf="Iform.get('Enddate')?.invalid && Iform.get('Enddate')?.touched">
-          <span style="color: red" *ngIf="Iform.get('Enddate')?.errors?.['required']">*EndDate is required.</span>
-        </span>
-    </div>
-
-    </div>
+      </div>
 
     <button type="submit" style="margin-left: 30px; margin-top: 5px;"  class="btn btn-dark">Submit</button>
+
 </form>

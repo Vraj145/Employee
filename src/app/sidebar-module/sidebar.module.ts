@@ -21,6 +21,8 @@ import { TravelexpenceComponent } from './travelexpence/travelexpence.component'
 import { AddexpenceComponent } from './addexpence/addexpence.component';
 import { AddtravelexpenceComponent } from './addtravelexpence/addtravelexpence.component';
 import { LeavedataComponent } from './leavedata/leavedata.component';
+import { FourthpageComponent } from '../user-module/fourthpage/fourthpage.component';
+
 
 
 
@@ -100,6 +102,10 @@ const sidebarRoutes: Routes = [
       {
         path: 'thirdpage',
         component: ThirdpageComponent
+      },
+      {
+        path: 'fourthpage',
+        component: FourthpageComponent
       }
     ]
   }
@@ -124,11 +130,12 @@ const sidebarRoutes: Routes = [
     SalaryComponent,
     SecondpageComponent,
     ThirdpageComponent,
+    FourthpageComponent,
     HeaderComponent,
     UserBaseComponent,
     AddtravelexpenceComponent,
-    LeavedataComponent,
-    
+    LeavedataComponent
+  
 
   ],
   imports: [
