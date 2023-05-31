@@ -78,6 +78,32 @@
         <div class="col"></div>
       </div>
 
-    <button type="submit" style="margin-left: 30px; margin-top: 5px;"  class="btn btn-dark">Submit</button>
-
+    <button type="submit" style="margin-left: 30px; margin-top: 5px;"  class="btn btn-dark">Add</button>
+    
+    <button style="margin-left: 30px; margin-top: 5px;" class="btn btn-dark" (click)="goToNextPage()">Next Page</button>
 </form>
+
+<table *ngIf="educationDetails.length > 0" class="table mt-3">
+  <thead>
+    <tr>
+      <th>Education Board</th>
+      <th>Institution</th>
+      <th>Degree</th>
+      <th>Degree Type</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let detail of educationDetails">
+      <td>{{ detail.Stateboard }}</td>
+      <td>{{ detail.Institute }}</td>
+      <td>{{ detail.Degree }}</td>
+      <td>{{ detail.degreetype }}</td>
+      <td>{{ detail.startdate | date }}</td>
+      <td>{{ detail.enddate | date }}</td>
+      <td>{{ detail.Percentage }}</td>
+    </tr>
+  </tbody>
+</table>

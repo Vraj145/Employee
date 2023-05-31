@@ -1,5 +1,5 @@
 <empmng-header></empmng-header>
-<form class="" [formGroup]="Salaryform">
+<form class="" [formGroup]="Salaryform" (ngSubmit)="submitform()">
 <h5 class="modal-title fs-5 pl-2" id="exampleModalLabel">Salary Information:</h5>
 
 <div class="row m-2">
@@ -97,4 +97,7 @@
       </div>
       <div class="col m-3"></div>
 </div>
+
+<button type="submit" class="btn btn-dark" style="margin-left: 35px;" >Submit</button>
+
 </form>

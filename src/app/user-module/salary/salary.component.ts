@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Route } from '@angular/router';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'empmng-salary',
@@ -10,7 +10,7 @@ import { Route } from '@angular/router';
 export class SalaryComponent implements OnInit{
 
 
-  // constructor(private router:Router){}
+  constructor(private router:Router){}
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
@@ -53,5 +53,32 @@ export class SalaryComponent implements OnInit{
   get NetSalary()
   {
     return this.Salaryform.get('NetSalary')
+  }
+
+
+  submitform()
+  {
+   
+      // Mark all form controls as dirty and trigger validation
+      Object.values(this.Salaryform.controls).forEach(control => {
+        control.markAsDirty();
+        control.updateValueAndValidity();
+  
+      });
+      
+      this.Salaryform.get('birthday')?.markAsTouched();
+      this.Salaryform.get('DateOfJoining')?.markAsTouched();
+      // console.log(this.Iform.value); 
+  
+      // Check if form is valid
+      
+      if (this.Salaryform.valid) {
+        // data submits after all valid
+      console.log(this.Salaryform.value);
+        // Submit form
+        // ...
+        this.router.navigate(['sidebar/about']);
+      }
+    
   }
 }

@@ -17,7 +17,7 @@ interface About{
   DateOfJoining : string;
   WorkLocation : string;
   State : string;
-  Country : string
+  Country : string;
 }
 
 @Component({
@@ -29,14 +29,10 @@ export class UserprofileComponent implements OnInit{
 
   abouts: About[] = aboutsdata;
 
-
-
   constructor(private router: Router){ }
 
   ngOnInit(): void {
       // 
   }
-  
-  
 
 }

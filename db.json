@@ -1,9 +1,9 @@
 [
   {
-    "Firstname" : "roshan",
-    "Lastname" : "singh",
-    "birthday" : "14/05/02",
-    "gender" : "male",
+    "Firstname" : "Roshan",
+    "Lastname" : "Singh",
+    "birthday" : "10/03/2001",
+    "gender" : "Male",
     "PersonalEmail": "abc@gmail.com",
     "PhoneNumber" : 9754654451,
     "EmergencyConatactNo" : 9756465425,

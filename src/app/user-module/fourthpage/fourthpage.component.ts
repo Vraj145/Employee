@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class FourthpageComponent implements OnInit{
 
-    // route: any;
+    //
+    experienceDetails: any[] = [];
+    //
 
     minEndDate: string='';
     isStartDateDisabled: boolean = false;
@@ -88,10 +90,18 @@ export class FourthpageComponent implements OnInit{
       this.Iform.get('Enddate')?.markAsTouched();
   
       if(this.Iform.valid ){
+
+        const experienceDetails = this.Iform.value;
+        this.experienceDetails.push(experienceDetails);
+
         console.log(this.Iform.value);
-  
-        this.router.navigate(['sidebar/about']);
+
+        this.Iform.reset();
+        // this.router.navigate(['sidebar/about']);
       }
+  }
+  gotoNext(){
+    this.router.navigate(['sidebar/dashboard']);
   }
  }
   

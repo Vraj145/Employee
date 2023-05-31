@@ -10,11 +10,13 @@ import { Router } from '@angular/router';
 })
 export class ThirdpageComponent implements OnInit{
 
+  //
+  educationDetails: any[] = [];
+  //
 
   minendDate: string='';
   isstartDateDisabled: boolean = false;
   isendDateDisabled: boolean = false;
-
 
   constructor(private router:Router){ 
     this.minendDate='';
@@ -97,9 +99,16 @@ export class ThirdpageComponent implements OnInit{
     this.Iform.get('enddate')?.markAsTouched();
 
     if(this.Iform.valid ){
+
+      const educationDetails = this.Iform.value;
+      this.educationDetails.push(educationDetails);
       console.log(this.Iform.value);
-  
-      this.router.navigate(['sidebar/about']);
+      // console.log(educationDetails);
+      this.Iform.reset();
+      // this.router.navigate(['sidebar/fourthpage']);
     }
 }
+  goToNextPage(){
+    this.router.navigate(['sidebar/fourthpage']);
+  }
 }
